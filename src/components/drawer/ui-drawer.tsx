@@ -19,7 +19,11 @@ const UiDrawer = (props: any) => {
                 }}
                 sx={{
                     display: {xs: 'block', sm: 'none'},
-                    '& .MuiDrawer-paper': {boxSizing: 'border-box', width: props.drawerWidth, backgroundColor: 'black'},
+                    '& .MuiDrawer-paper': {
+                        boxSizing: 'border-box',
+                        width: props.drawerWidth,
+                        backgroundColor: 'black'
+                    },
                 }}
             >
                 <UiDrawerList/>

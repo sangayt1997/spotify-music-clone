@@ -10,6 +10,8 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import LibraryMusicIcon from '@mui/icons-material/LibraryMusic';
 import ListItemText from "@mui/material/ListItemText";
 import Divider from "@mui/material/Divider";
+import spotifyTextLogo from "../../asset/logo/spotify_text_logo.png";
+import Box from "@mui/material/Box";
 
 const UiDrawerList = () => {
     const PrimaryDrawerLists = [
@@ -43,12 +45,19 @@ const UiDrawerList = () => {
             title: 'My Playlist #1'
         },
         {
-            title: 'Top Songs-Global'
+            title: 'Top Songs - Global'
         }
     ];
 
     return (
         <div>
+            <Box margin={'12px 8px'} alignItems="center" display="flex">
+                <img
+                    src={spotifyTextLogo}
+                    alt="logo"
+                    height="40px"
+                />
+            </Box>
             <List>
                 {PrimaryDrawerLists.map((item, index) => (
                     <ListItem key={index} disablePadding>
@@ -61,7 +70,6 @@ const UiDrawerList = () => {
                     </ListItem>
                 ))}
             </List>
-
             <List>
                 {SecondaryDrawerLists.map((item, index) => (
                     <ListItem key={index} disablePadding>
@@ -75,7 +83,6 @@ const UiDrawerList = () => {
                 ))}
             </List>
             <Divider sx={{borderColor: 'white'}}/>
-
             <List>
                 {DrawerLists.map((item, index) => (
                     <ListItem key={index} disablePadding>
