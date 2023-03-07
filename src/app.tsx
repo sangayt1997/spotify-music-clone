@@ -1,12 +1,12 @@
 import React from 'react';
-import { Button } from "@mui/material";
+import Box from "@mui/material/Box";
+import Dashboard from "./pages/dashboard/dashboard";
 
 function App() {
     return (
-        <div style={{ backgroundColor: 'black'}}>
-            <p>Spotify Music Clone</p>
-            <Button variant="contained">Hello World</Button>
-        </div>
+        <Box sx={{minHeight: '100vh', backgroundColor: '#212121'}}>
+            <Dashboard />
+        </Box>
     );
 }
 
