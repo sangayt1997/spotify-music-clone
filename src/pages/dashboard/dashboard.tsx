@@ -56,7 +56,7 @@ const Dashboard = () => {
                         </Grid>
                         <Grid item>
                             <Typography variant="h6" noWrap component="div">
-                                Responsive drawer
+                                Account UI here
                             </Typography>
                         </Grid>
                     </Grid>
