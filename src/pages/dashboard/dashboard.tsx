@@ -6,10 +6,13 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
+import Grid from "@mui/material/Grid";
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 const drawerWidth = 240;
 
-function Dashboard() {
+const Dashboard = () => {
     const [mobileOpen, setMobileOpen] = useState(false);
 
     const handleDrawerToggle = () => {
@@ -27,21 +30,43 @@ function Dashboard() {
                 }}
             >
                 <Toolbar>
-                    <IconButton
-                        color="inherit"
-                        aria-label="open drawer"
-                        edge="start"
-                        onClick={handleDrawerToggle}
-                        sx={{mr: 2, display: {sm: 'none'}}}
-                    >
-                        <MenuIcon/>
-                    </IconButton>
-                    <Typography variant="h6" noWrap component="div">
-                        Responsive drawer
-                    </Typography>
+                    <Grid container spacing={2} sx={{justifyContent: 'space-between'}}>
+                        <Grid item>
+                            <IconButton
+                                color="inherit"
+                                aria-label="open drawer"
+                                edge="start"
+                                onClick={handleDrawerToggle}
+                                sx={{display: {sm: 'none'}}}
+                            >
+                                <MenuIcon/>
+                            </IconButton>
+                            <Grid container>
+                                <Grid item>
+                                    <IconButton>
+                                        <ChevronLeftIcon sx={{color: 'white'}}/>
+                                    </IconButton>
+                                </Grid>
+                                <Grid item>
+                                    <IconButton>
+                                        <ChevronRightIcon sx={{color: 'white'}}/>
+                                    </IconButton>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                        <Grid item>
+                            <Typography variant="h6" noWrap component="div">
+                                Responsive drawer
+                            </Typography>
+                        </Grid>
+                    </Grid>
                 </Toolbar>
             </AppBar>
-            <UiDrawer onDrawToggleHandler={handleDrawerToggle} onMobileOpen={mobileOpen} drawerWidth={drawerWidth}/>
+            <UiDrawer
+                onDrawToggleHandler={handleDrawerToggle}
+                onMobileOpen={mobileOpen}
+                drawerWidth={drawerWidth}
+            />
             <Box
                 component="main"
                 sx={{flexGrow: 1, p: 3, width: {sm: `calc(100% - ${drawerWidth}px)`}}}
