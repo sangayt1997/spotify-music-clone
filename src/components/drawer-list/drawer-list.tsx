@@ -10,9 +10,18 @@ import ListItemText from "@mui/material/ListItemText";
 
 const UiDrawerList = () => {
     const DrawerList = [
-        {title: 'Home', icon: <HomeIcon/>},
-        {title: 'Search', icon: <SearchIcon/>},
-        {title: 'Your Library', icon: <LibraryMusicIcon/>},
+        {
+            title: 'Home',
+            icon: <HomeIcon/>
+        },
+        {
+            title: 'Search',
+            icon: <SearchIcon/>
+        },
+        {
+            title: 'Your Library',
+            icon: <LibraryMusicIcon/>
+        },
     ];
     return (
         <div>
