@@ -4,7 +4,7 @@ import Dashboard from "./pages/dashboard/dashboard";
 
 function App() {
     return (
-        <Box sx={{minHeight: '100vh', backgroundColor: 'black'}}>
+        <Box sx={{minHeight: '100vh', backgroundColor: '#212121'}}>
             <Dashboard />
         </Box>
     );

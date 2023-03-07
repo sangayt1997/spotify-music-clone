@@ -4,16 +4,10 @@ import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
+import UiDrawerList from "../drawer-list/drawer-list";
 
 const drawerWidth = 240;
 
@@ -33,23 +27,6 @@ const UiDrawer = (props: Props) => {
         setMobileOpen(!mobileOpen);
     };
 
-    const drawer = (
-        <div>
-            <List>
-                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                    <ListItem key={text} disablePadding>
-                        <ListItemButton>
-                            <ListItemIcon>
-                                {index % 2 === 0 ? <InboxIcon/> : <MailIcon/>}
-                            </ListItemIcon>
-                            <ListItemText primary={text} sx={{color: 'black'}}/>
-                        </ListItemButton>
-                    </ListItem>
-                ))}
-            </List>
-        </div>
-    );
-
     const container = window !== undefined ? () => window().document.body : undefined;
 
     return (
@@ -58,6 +35,7 @@ const UiDrawer = (props: Props) => {
             <AppBar
                 position="fixed"
                 sx={{
+                    backgroundColor: '#212121',
                     width: {sm: `calc(100% - ${drawerWidth}px)`},
                     ml: {sm: `${drawerWidth}px`},
                 }}
@@ -92,27 +70,31 @@ const UiDrawer = (props: Props) => {
                     }}
                     sx={{
                         display: {xs: 'block', sm: 'none'},
-                        '& .MuiDrawer-paper': {boxSizing: 'border-box', width: drawerWidth},
+                        '& .MuiDrawer-paper': {boxSizing: 'border-box', width: drawerWidth, backgroundColor: 'black'},
                     }}
                 >
-                    {drawer}
+                    <UiDrawerList/>
                 </Drawer>
                 <Drawer
                     variant="permanent"
                     sx={{
                         display: {xs: 'none', sm: 'block'},
-                        '& .MuiDrawer-paper': {boxSizing: 'border-box', width: drawerWidth},
+                        '& .MuiDrawer-paper': {
+                            boxSizing: 'border-box',
+                            width: drawerWidth,
+                            backgroundColor: 'black'
+                        },
                     }}
                     open
                 >
-                    {drawer}
+                    <UiDrawerList/>
                 </Drawer>
             </Box>
             <Box
                 component="main"
                 sx={{flexGrow: 1, p: 3, width: {sm: `calc(100% - ${drawerWidth}px)`}}}
             >
-                <Toolbar />
+                <Toolbar/>
                 <Typography paragraph>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                     tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non
