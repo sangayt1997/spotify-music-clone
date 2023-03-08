@@ -59,11 +59,13 @@ const UiDrawerList = () => {
     return (
         <DrawerList>
             <Box margin={'12px 8px'} alignItems="center" display="flex">
-                <img
-                    src={spotifyTextLogo}
-                    alt="logo"
-                    height="40px"
-                />
+                <Link to="/home">
+                    <img
+                        src={spotifyTextLogo}
+                        alt="logo"
+                        height="40px"
+                    />
+                </Link>
             </Box>
             <List>
                 {PrimaryDrawerLists.map((item, index) => (
@@ -93,7 +95,7 @@ const UiDrawerList = () => {
                     </ListItem>
                 ))}
             </List>
-            <Divider sx={{borderColor: 'white'}}/>
+            <Divider sx={{borderColor: '#FFFFFF99'}}/>
             <List>
                 {DrawerLists.map((item, index) => (
                     <ListItem key={index} disablePadding>

@@ -8,7 +8,6 @@ const UiDrawer = (props: any) => {
         <Box
             component="nav"
             sx={{width: {sm: props.drawerWidth}, flexShrink: {sm: 0}}}
-            aria-label="mailbox folders"
         >
             <Drawer
                 variant="temporary"
@@ -22,7 +21,8 @@ const UiDrawer = (props: any) => {
                     '& .MuiDrawer-paper': {
                         boxSizing: 'border-box',
                         width: props.drawerWidth,
-                        backgroundColor: 'black'
+                        backgroundColor: 'black',
+                        padding: ['0 8px']
                     },
                 }}
             >
@@ -35,7 +35,8 @@ const UiDrawer = (props: any) => {
                     '& .MuiDrawer-paper': {
                         boxSizing: 'border-box',
                         width: props.drawerWidth,
-                        backgroundColor: 'black'
+                        backgroundColor: 'black',
+                        padding: ['0 12px']
                     },
                 }}
                 open
