@@ -31,7 +31,7 @@ const Dashboard = () => {
                 }}
             >
                 <Toolbar>
-                    <Grid container spacing={2} sx={{justifyContent: 'space-between'}}>
+                    <Grid container spacing={2} justifyContent="space-between">
                         <Grid item>
                             <IconButton
                                 color="inherit"
