@@ -1,14 +1,14 @@
 import React from 'react';
 import Box from "@mui/material/Box";
-import { RouterProvider } from "react-router-dom";
-import router from "./routes/router";
-import Dashboard from "./pages/dashboard/dashboard";
+import { BrowserRouter } from "react-router-dom";
+import Router from "./routes/router";
 
 function App() {
     return (
         <Box sx={{minHeight: '100vh', backgroundColor: '#212121'}}>
-            {/*<RouterProvider router={router}/>*/}
-            <Dashboard />
+           <BrowserRouter>
+               <Router />
+           </BrowserRouter>
         </Box>
     );
 }

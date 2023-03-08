@@ -9,6 +9,7 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import { Outlet } from "react-router-dom";
 
 const drawerWidth = 240;
 
@@ -72,7 +73,8 @@ const Dashboard = () => {
                 sx={{flexGrow: 1, p: 3, width: {sm: `calc(100% - ${drawerWidth}px)`}}}
             >
                 <Toolbar/>
-                <Typography paragraph>
+                <Outlet />
+                {/*<Typography paragraph>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                     tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non
                     enim praesent elementum facilisis leo vel. Risus at ultrices mi tempus
@@ -150,7 +152,7 @@ const Dashboard = () => {
                     tristique sollicitudin nibh sit. Ornare aenean euismod elementum nisi quis
                     eleifend. Commodo viverra maecenas accumsan lacus vel facilisis. Nulla
                     posuere sollicitudin aliquam ultrices sagittis orci a.
-                </Typography>
+                </Typography>*/}
             </Box>
         </Box>
     );
