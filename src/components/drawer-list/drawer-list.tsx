@@ -20,7 +20,7 @@ const UiDrawerList = () => {
         {
             title: 'Home',
             icon: <HomeIcon/>,
-            navigate: '/home'
+            navigate: '/'
         },
         {
             title: 'Search',
@@ -59,7 +59,7 @@ const UiDrawerList = () => {
     return (
         <DrawerList>
             <Box margin={'12px 8px'} alignItems="center" display="flex">
-                <Link to="/home">
+                <Link to="/">
                     <img
                         src={spotifyTextLogo}
                         alt="logo"

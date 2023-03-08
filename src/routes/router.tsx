@@ -10,8 +10,8 @@ import LikedSongs from "../pages/liked-songs/liked-songs";
 const Router = () => {
     return (
         <Routes>
-            <Route path="/" element={<Dashboard/>}>
-                <Route path="/home" element={<Home/>}/>
+            <Route element={<Dashboard/>}>
+                <Route path="/" element={<Home/>}/>
                 <Route path="/search" element={<Search/>}/>
                 <Route path="/your-library" element={<YourLibrary/>}/>
                 <Route path="/create-playlist" element={<CreatePlaylist/>}/>
