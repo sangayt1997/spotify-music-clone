@@ -4,6 +4,8 @@ import { Route, Routes } from "react-router-dom";
 import Home from "../pages/home/home";
 import Search from "../pages/search/search";
 import YourLibrary from "../pages/your-library/your-library";
+import CreatePlaylist from "../pages/create-playlist/create-playlist";
+import LikedSongs from "../pages/liked-songs/liked-songs";
 
 const Router = () => {
     return (
@@ -12,6 +14,8 @@ const Router = () => {
                 <Route path="/home" element={<Home/>}/>
                 <Route path="/search" element={<Search/>}/>
                 <Route path="/your-library" element={<YourLibrary/>}/>
+                <Route path="/create-playlist" element={<CreatePlaylist/>}/>
+                <Route path="/liked-songs" element={<LikedSongs/>}/>
             </Route>
         </Routes>
     )
