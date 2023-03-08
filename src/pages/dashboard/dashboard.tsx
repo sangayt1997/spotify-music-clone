@@ -9,16 +9,24 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 
 const drawerWidth = 240;
 
 const Dashboard = () => {
     const [mobileOpen, setMobileOpen] = useState(false);
+    const navigate = useNavigate();
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };
+
+    const handleGoBack = () => {
+        navigate(-1);
+    }
+    const handleGoForward = () => {
+        navigate(1);
+    }
 
     return (
         <Box sx={{display: 'flex'}}>
@@ -44,12 +52,12 @@ const Dashboard = () => {
                             </IconButton>
                             <Grid container>
                                 <Grid item>
-                                    <IconButton>
+                                    <IconButton onClick={handleGoBack}>
                                         <ChevronLeftIcon sx={{color: 'white'}}/>
                                     </IconButton>
                                 </Grid>
                                 <Grid item>
-                                    <IconButton>
+                                    <IconButton onClick={handleGoForward}>
                                         <ChevronRightIcon sx={{color: 'white'}}/>
                                     </IconButton>
                                 </Grid>
