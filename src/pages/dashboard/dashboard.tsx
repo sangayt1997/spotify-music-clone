@@ -10,6 +10,8 @@ import Grid from "@mui/material/Grid";
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { Outlet, useNavigate } from "react-router-dom";
+import { Fab } from "@mui/material";
+import { DashBoard } from "./styles/dashboard.style";
 
 const drawerWidth = 240;
 
@@ -29,7 +31,7 @@ const Dashboard = () => {
     }
 
     return (
-        <Box sx={{display: 'flex'}}>
+        <DashBoard>
             <AppBar
                 position="fixed"
                 sx={{
@@ -50,16 +52,16 @@ const Dashboard = () => {
                             >
                                 <MenuIcon/>
                             </IconButton>
-                            <Grid container>
+                            <Grid container spacing={1}>
                                 <Grid item>
-                                    <IconButton onClick={handleGoBack}>
+                                    <Fab className="navigation-fab" size="small" onClick={handleGoBack}>
                                         <ChevronLeftIcon sx={{color: 'white'}}/>
-                                    </IconButton>
+                                    </Fab>
                                 </Grid>
                                 <Grid item>
-                                    <IconButton onClick={handleGoForward}>
+                                    <Fab className="navigation-fab" size="small" onClick={handleGoForward}>
                                         <ChevronRightIcon sx={{color: 'white'}}/>
-                                    </IconButton>
+                                    </Fab>
                                 </Grid>
                             </Grid>
                         </Grid>
@@ -78,12 +80,12 @@ const Dashboard = () => {
             />
             <Box
                 component="main"
-                sx={{ p: ['18px 20px'], minHeight: '100vh', width: {sm: `calc(100% - ${drawerWidth}px)`}}}
+                sx={{p: ['18px 20px'], minHeight: '100vh', width: {sm: `calc(100% - ${drawerWidth}px)`}}}
             >
                 <Toolbar/>
                 <Outlet/>
             </Box>
-        </Box>
+        </DashBoard>
     );
 }
 
