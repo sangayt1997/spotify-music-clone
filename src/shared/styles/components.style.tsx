@@ -1,27 +1,36 @@
 import styled from "styled-components";
 
 export const Card = styled.div`
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
   background-color: #181818;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  display: flex;
-  flex-direction: column;
   overflow: hidden;
   cursor: pointer;
-  width: 250px;
-  
+  padding: 12px;
+
   .show-fab {
     display: none;
   }
-  
-  img {
-    object-fit: cover;
-    height: 200px;
-    width: 100%;
+
+  .image-wrapper {
+    position: relative;
+
+    img {
+      height: 150px;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    }
   }
+
   &:hover {
     opacity: 0.7;
+    background-color: rgba(0, 0, 0, 0.1);
+
     .show-fab {
       display: block;
     }
@@ -31,18 +40,21 @@ export const Card = styled.div`
 export const CardContent = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 12px 0;
 
   h2 {
-    color: #fff;
-    font-size: 1.2rem;
+    color: #FFFFFF;
+    font-size: 16px;
     font-weight: 700;
     margin: 0 0 10px;
   }
 
   p {
-    color: #b3b3b3;
-    font-size: 1rem;
-    margin: 0 0 10px;
+    color: #B3B3B3;
+    font-size: 14px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 `;

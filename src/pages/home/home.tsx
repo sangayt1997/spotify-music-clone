@@ -20,32 +20,38 @@ const Home = () => {
     return (
         <Box sx={{display: 'flex'}}>
             <Card>
-                <img src={musicAlbum} alt="dummy"/>
+                <Box className="image-wrapper">
+                    <img src={musicAlbum} alt="music album"/>
+                    <Box className="show-fab" position="absolute" bottom={12} right={12}>
+                        <Fab
+                            color="primary"
+                            size="medium"
+                            onClick={isPlaying ? pauseBtnHandler : playBtnHandler}
+                        >
+                            {isPlaying ? (
+                                <PauseIcon
+                                    sx={{
+                                        height: 30,
+                                        width: 30,
+                                        color: "black"
+                                    }}
+                                />
+                            ) : (
+                                <PlayArrowIcon
+                                    sx={{
+                                        height: 30,
+                                        width: 30,
+                                        color: "black"
+                                    }}
+                                />
+                            )}
+                        </Fab>
+                    </Box>
+                </Box>
                 <CardContent>
                     <h2>fnsdfnnsfdfdjsn</h2>
-                    <p>ndfsdfnfjdfnfnsdjf</p>
+                    <p>Sam Smith, Adele, Shawn Mendes and more Sam Smith, Adele, Shawn Mendes and more</p>
                 </CardContent>
-                <Box className="show-fab" position="absolute" bottom="25%" right={12}>
-                    <Fab color="primary" size="medium" onClick={isPlaying ? pauseBtnHandler : playBtnHandler}>
-                        {isPlaying ? (
-                            <PauseIcon
-                                sx={{
-                                    height: 30,
-                                    width: 30,
-                                    color: "black"
-                                }}
-                            />
-                        ) : (
-                            <PlayArrowIcon
-                                sx={{
-                                    height: 30,
-                                    width: 30,
-                                    color: "black"
-                                }}
-                            />
-                        )}
-                    </Fab>
-                </Box>
             </Card>
         </Box>
     );
