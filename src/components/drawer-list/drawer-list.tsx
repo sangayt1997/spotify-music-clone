@@ -49,10 +49,12 @@ const UiDrawerList = () => {
 
     const DrawerLists = [
         {
-            title: 'My Playlist #1'
+            title: 'My Playlist #1',
+            navigate: '/my-playlist'
         },
         {
-            title: 'Top Songs - Global'
+            title: 'Top Songs - Global',
+            navigate: '/top-song-global'
         }
     ];
 
@@ -99,9 +101,11 @@ const UiDrawerList = () => {
             <List>
                 {DrawerLists.map((item, index) => (
                     <ListItem key={index} disablePadding>
-                        <ListItemButton>
-                            <ListItemText primary={item.title} sx={{color: 'white'}}/>
-                        </ListItemButton>
+                        <Link to={item.navigate}>
+                            <ListItemButton>
+                                <ListItemText primary={item.title} sx={{color: 'white'}}/>
+                            </ListItemButton>
+                        </Link>
                     </ListItem>
                 ))}
             </List>
