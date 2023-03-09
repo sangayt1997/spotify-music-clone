@@ -1,58 +1,51 @@
-import React, { useState } from "react";
+import React from "react";
 import Box from "@mui/material/Box";
-import { Card, CardContent } from "../../shared/styles/components.style";
+import SpCard from "../../shared/card/card";
 import musicAlbum from "../../asset/images/music_album_banner.jpg";
-import PlayArrowIcon from '@mui/icons-material/PlayArrow';
-import PauseIcon from '@mui/icons-material/Pause';
-import { Fab } from "@mui/material";
+import Grid from "@mui/material/Grid";
+
+const DummyMusicData = [
+    {
+        image: musicAlbum,
+        title: 'Daily Mix 1',
+        description: 'The Chainsmokers, Calvin Harris, Flo Rida and more'
+    },
+    {
+        image: musicAlbum,
+        title: 'Daily Mix 2',
+        description: 'Sam Smith, Adele, Shawn Mendes and more'
+    },
+    {
+        image: musicAlbum,
+        title: 'Daily Mix 3',
+        description: 'Eminem, Post Malone, The Kid LAROI and more'
+    },
+    {
+        image: musicAlbum,
+        title: 'Daily Mix 4',
+        description: 'Ozuna, J Balvin, Myke Towers and more'
+    },
+    {
+        image: musicAlbum,
+        title: 'Daily Mix 5',
+        description: 'Mino, J Balvino, Myke Clock Tower and more'
+    },
+];
 
 const Home = () => {
-    const [isPlaying, setIsPlaying] = useState(false);
-
-    const playBtnHandler = () => {
-        setIsPlaying(true);
-    }
-
-    const pauseBtnHandler = () => {
-        setIsPlaying(false);
-    };
-
     return (
         <Box sx={{display: 'flex'}}>
-            <Card>
-                <Box className="image-wrapper">
-                    <img src={musicAlbum} alt="music album"/>
-                    <Box className="show-fab" position="absolute" bottom={12} right={12}>
-                        <Fab
-                            color="primary"
-                            size="medium"
-                            onClick={isPlaying ? pauseBtnHandler : playBtnHandler}
-                        >
-                            {isPlaying ? (
-                                <PauseIcon
-                                    sx={{
-                                        height: 30,
-                                        width: 30,
-                                        color: "black"
-                                    }}
-                                />
-                            ) : (
-                                <PlayArrowIcon
-                                    sx={{
-                                        height: 30,
-                                        width: 30,
-                                        color: "black"
-                                    }}
-                                />
-                            )}
-                        </Fab>
-                    </Box>
-                </Box>
-                <CardContent>
-                    <h2>fnsdfnnsfdfdjsn</h2>
-                    <p>Sam Smith, Adele, Shawn Mendes and more Sam Smith, Adele, Shawn Mendes and more</p>
-                </CardContent>
-            </Card>
+            <Grid container spacing={2}>
+                {DummyMusicData.map(item => (
+                    <Grid item md={2.4}>
+                        <SpCard
+                            image={item.image}
+                            title={item.title}
+                            description={item.description}
+                        />
+                    </Grid>
+                ))}
+            </Grid>
         </Box>
     );
 }
