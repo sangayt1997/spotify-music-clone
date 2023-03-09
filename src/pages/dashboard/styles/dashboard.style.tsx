@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const DashBoard = styled.div`
+export const DashBoardContainer = styled.div`
   display: flex;
 
   .navigation-fab  {

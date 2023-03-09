@@ -11,7 +11,7 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { Outlet, useNavigate } from "react-router-dom";
 import { Fab } from "@mui/material";
-import { DashBoard } from "./styles/dashboard.style";
+import { DashBoardContainer } from "./styles/dashboard.style";
 
 const drawerWidth = 240;
 
@@ -31,7 +31,7 @@ const Dashboard = () => {
     }
 
     return (
-        <DashBoard>
+        <DashBoardContainer>
             <AppBar
                 position="fixed"
                 sx={{
@@ -85,7 +85,7 @@ const Dashboard = () => {
                 <Toolbar/>
                 <Outlet/>
             </Box>
-        </DashBoard>
+        </DashBoardContainer>
     );
 }
 

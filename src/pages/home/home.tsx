@@ -1,8 +1,8 @@
 import React from "react";
-import Box from "@mui/material/Box";
 import SpCard from "../../shared/card/card";
 import musicAlbum from "../../asset/images/music_album_banner.jpg";
 import Grid from "@mui/material/Grid";
+import { HomeContainer } from "./styles/home.style";
 
 const DummyMusicData = [
     {
@@ -39,7 +39,7 @@ const DummyMusicData = [
 
 const Home = () => {
     return (
-        <Box sx={{display: 'flex'}}>
+        <HomeContainer>
             <Grid container spacing={2}>
                 {DummyMusicData.map(item => (
                     <Grid item md={2.4} key={item.id}>
@@ -51,7 +51,7 @@ const Home = () => {
                     </Grid>
                 ))}
             </Grid>
-        </Box>
+        </HomeContainer>
     );
 }
 
