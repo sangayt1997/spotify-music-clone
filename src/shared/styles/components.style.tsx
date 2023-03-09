@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Card = styled.div`
+  position: relative;
   background-color: #181818;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
@@ -9,11 +10,21 @@ export const Card = styled.div`
   overflow: hidden;
   cursor: pointer;
   width: 250px;
-
+  
+  .show-fab {
+    display: none;
+  }
+  
   img {
     object-fit: cover;
     height: 200px;
     width: 100%;
+  }
+  &:hover {
+    opacity: 0.7;
+    .show-fab {
+      display: block;
+    }
   }
 `;
 
