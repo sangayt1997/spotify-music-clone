@@ -5,8 +5,43 @@ import Grid from "@mui/material/Grid";
 import { HomeContainer } from "./styles/home.style";
 import Category from "../../components/category/category";
 import { Stack } from "@mui/material";
+import PeriodCategories from "../../components/period-categories/period-categories";
+import SpPeriodCard from "../../shared/period-card/period-card";
 
 const DummyMusicData = [
+    {
+        id: 'm1',
+        image: musicAlbum,
+        title: 'Daily Mix 1',
+        description: 'The Chainsmokers, Calvin Harris, Flo Rida and more'
+    },
+    {
+        id: 'm2',
+        image: musicAlbum,
+        title: 'Daily Mix 2',
+        description: 'Sam Smith, Adele, Shawn Mendes and more'
+    },
+    {
+        id: 'm3',
+        image: musicAlbum,
+        title: 'Daily Mix 3',
+        description: 'Eminem, Post Malone, The Kid LAROI and more'
+    },
+    {
+        id: 'm4',
+        image: musicAlbum,
+        title: 'Daily Mix 4',
+        description: 'Ozuna, J Balvin, Myke Towers and more'
+    },
+    {
+        id: 'm5',
+        image: musicAlbum,
+        title: 'Daily Mix 5',
+        description: 'Mino, J Balvino, Myke Clock Tower, Ozuna, J Balvin, Myke Towers and more'
+    },
+];
+
+const DummyPeriodMusic = [
     {
         id: 'm1',
         image: musicAlbum,
@@ -43,6 +78,18 @@ const Home = () => {
     return (
         <HomeContainer>
             <Stack spacing={2}>
+                <PeriodCategories>
+                    <Grid container spacing={2}>
+                        {DummyPeriodMusic.map(item => (
+                            <Grid item md={4} key={item.id}>
+                                <SpPeriodCard
+                                    image={item.image}
+                                    title={item.title}
+                                />
+                            </Grid>
+                        ))}
+                    </Grid>
+                </PeriodCategories>
                 <Category categoryTitle="Made for Sangay Thinley">
                     <Grid container spacing={2}>
                         {DummyMusicData.map(item => (
