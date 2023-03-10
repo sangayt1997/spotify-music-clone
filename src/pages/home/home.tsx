@@ -4,7 +4,6 @@ import musicAlbum from "../../asset/images/music_album_banner.jpg";
 import Grid from "@mui/material/Grid";
 import { HomeContainer } from "./styles/home.style";
 import Category from "../../components/category/category";
-import Box from "@mui/material/Box";
 import { Stack } from "@mui/material";
 
 const DummyMusicData = [
