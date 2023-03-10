@@ -12,6 +12,7 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { Outlet, useNavigate } from "react-router-dom";
 import { Fab } from "@mui/material";
 import { DashBoardContainer } from "./styles/dashboard.style";
+import Footer from "../../components/footer/footer";
 
 const drawerWidth = 240;
 
@@ -80,10 +81,13 @@ const Dashboard = () => {
             />
             <Box
                 component="main"
-                sx={{p: ['18px 20px'], minHeight: '100vh', width: {sm: `calc(100% - ${drawerWidth}px)`}}}
+                sx={{p: ['22px 24px'], minHeight: '100vh', width: {sm: `calc(100% - ${drawerWidth}px)`}}}
             >
                 <Toolbar/>
-                <Outlet/>
+                <Box display="flex" minHeight="92vh" flexDirection="column" justifyContent="space-between">
+                    <Outlet/>
+                    <Footer/>
+                </Box>
             </Box>
         </DashBoardContainer>
     );
