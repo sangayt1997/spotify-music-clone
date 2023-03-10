@@ -12,31 +12,38 @@ import ListItemText from "@mui/material/ListItemText";
 import Divider from "@mui/material/Divider";
 import spotifyTextLogo from "../../asset/logo/spotify_text_logo.png";
 import Box from "@mui/material/Box";
+import { Link } from "react-router-dom";
+import DrawerList from "./style/drawer-list.style";
 
 const UiDrawerList = () => {
     const PrimaryDrawerLists = [
         {
             title: 'Home',
-            icon: <HomeIcon/>
+            icon: <HomeIcon/>,
+            navigate: '/'
         },
         {
             title: 'Search',
-            icon: <SearchIcon/>
+            icon: <SearchIcon/>,
+            navigate: '/search'
         },
         {
             title: 'Your Library',
-            icon: <LibraryMusicIcon/>
+            icon: <LibraryMusicIcon/>,
+            navigate: '/your-library'
         },
     ];
 
     const SecondaryDrawerLists = [
         {
             title: 'Create Playlist',
-            icon: <AddBoxIcon/>
+            icon: <AddBoxIcon/>,
+            navigate: '/create-playlist'
         },
         {
             title: 'Liked Songs',
-            icon: <FavoriteIcon/>
+            icon: <FavoriteIcon/>,
+            navigate: '/liked-songs'
         },
     ];
 
@@ -50,39 +57,45 @@ const UiDrawerList = () => {
     ];
 
     return (
-        <div>
+        <DrawerList>
             <Box margin={'12px 8px'} alignItems="center" display="flex">
-                <img
-                    src={spotifyTextLogo}
-                    alt="logo"
-                    height="40px"
-                />
+                <Link to="/">
+                    <img
+                        src={spotifyTextLogo}
+                        alt="logo"
+                        height="40px"
+                    />
+                </Link>
             </Box>
             <List>
                 {PrimaryDrawerLists.map((item, index) => (
                     <ListItem key={index} disablePadding>
-                        <ListItemButton>
-                            <ListItemIcon sx={{color: 'white'}}>
-                                {item.icon}
-                            </ListItemIcon>
-                            <ListItemText primary={item.title} sx={{color: 'white'}}/>
-                        </ListItemButton>
+                        <Link to={item.navigate}>
+                            <ListItemButton>
+                                <ListItemIcon sx={{color: 'white'}}>
+                                    {item.icon}
+                                </ListItemIcon>
+                                <ListItemText primary={item.title} sx={{color: 'white'}}/>
+                            </ListItemButton>
+                        </Link>
                     </ListItem>
                 ))}
             </List>
             <List>
                 {SecondaryDrawerLists.map((item, index) => (
                     <ListItem key={index} disablePadding>
-                        <ListItemButton>
-                            <ListItemIcon sx={{color: 'white'}}>
-                                {item.icon}
-                            </ListItemIcon>
-                            <ListItemText primary={item.title} sx={{color: 'white'}}/>
-                        </ListItemButton>
+                        <Link to={item.navigate}>
+                            <ListItemButton>
+                                <ListItemIcon sx={{color: 'white'}}>
+                                    {item.icon}
+                                </ListItemIcon>
+                                <ListItemText primary={item.title} sx={{color: 'white'}}/>
+                            </ListItemButton>
+                        </Link>
                     </ListItem>
                 ))}
             </List>
-            <Divider sx={{borderColor: 'white'}}/>
+            <Divider sx={{borderColor: '#FFFFFF99'}}/>
             <List>
                 {DrawerLists.map((item, index) => (
                     <ListItem key={index} disablePadding>
@@ -92,7 +105,7 @@ const UiDrawerList = () => {
                     </ListItem>
                 ))}
             </List>
-        </div>
+        </DrawerList>
     )
 }
 
