@@ -3,6 +3,7 @@ import SpCard from "../../shared/card/card";
 import musicAlbum from "../../asset/images/music_album_banner.jpg";
 import Grid from "@mui/material/Grid";
 import { HomeContainer } from "./styles/home.style";
+import Category from "../../components/category/category";
 
 const DummyMusicData = [
     {
@@ -40,17 +41,19 @@ const DummyMusicData = [
 const Home = () => {
     return (
         <HomeContainer>
-            <Grid container spacing={2}>
-                {DummyMusicData.map(item => (
-                    <Grid item md={2.4} key={item.id}>
-                        <SpCard
-                            image={item.image}
-                            title={item.title}
-                            description={item.description}
-                        />
-                    </Grid>
-                ))}
-            </Grid>
+            <Category categoryTitle="Made for Sangay Thinley">
+                <Grid container spacing={2}>
+                    {DummyMusicData.map(item => (
+                        <Grid item md={2.4} key={item.id}>
+                            <SpCard
+                                image={item.image}
+                                title={item.title}
+                                description={item.description}
+                            />
+                        </Grid>
+                    ))}
+                </Grid>
+            </Category>
         </HomeContainer>
     );
 }
