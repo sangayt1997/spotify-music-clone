@@ -4,6 +4,8 @@ import musicAlbum from "../../asset/images/music_album_banner.jpg";
 import Grid from "@mui/material/Grid";
 import { HomeContainer } from "./styles/home.style";
 import Category from "../../components/category/category";
+import Box from "@mui/material/Box";
+import { Stack } from "@mui/material";
 
 const DummyMusicData = [
     {
@@ -41,19 +43,86 @@ const DummyMusicData = [
 const Home = () => {
     return (
         <HomeContainer>
-            <Category categoryTitle="Made for Sangay Thinley">
-                <Grid container spacing={2}>
-                    {DummyMusicData.map(item => (
-                        <Grid item md={2.4} key={item.id}>
-                            <SpCard
-                                image={item.image}
-                                title={item.title}
-                                description={item.description}
-                            />
-                        </Grid>
-                    ))}
-                </Grid>
-            </Category>
+            <Stack spacing={2}>
+                <Category categoryTitle="Made for Sangay Thinley">
+                    <Grid container spacing={2}>
+                        {DummyMusicData.map(item => (
+                            <Grid item md={2.4} key={item.id}>
+                                <SpCard
+                                    image={item.image}
+                                    title={item.title}
+                                    description={item.description}
+                                />
+                            </Grid>
+                        ))}
+                    </Grid>
+                </Category>
+                <Category categoryTitle="Your top mixes">
+                    <Grid container spacing={2}>
+                        {DummyMusicData.map(item => (
+                            <Grid item md={2.4} key={item.id}>
+                                <SpCard
+                                    image={item.image}
+                                    title={item.title}
+                                    description={item.description}
+                                />
+                            </Grid>
+                        ))}
+                    </Grid>
+                </Category>
+                <Category categoryTitle="Recently played">
+                    <Grid container spacing={2}>
+                        {DummyMusicData.map(item => (
+                            <Grid item md={2.4} key={item.id}>
+                                <SpCard
+                                    image={item.image}
+                                    title={item.title}
+                                    description={item.description}
+                                />
+                            </Grid>
+                        ))}
+                    </Grid>
+                </Category>
+                <Category categoryTitle="Recommended radio">
+                    <Grid container spacing={2}>
+                        {DummyMusicData.map(item => (
+                            <Grid item md={2.4} key={item.id}>
+                                <SpCard
+                                    image={item.image}
+                                    title={item.title}
+                                    description={item.description}
+                                />
+                            </Grid>
+                        ))}
+                    </Grid>
+                </Category>
+                <Category categoryTitle="Spotify Playlists">
+                    <Grid container spacing={2}>
+                        {DummyMusicData.map(item => (
+                            <Grid item md={2.4} key={item.id}>
+                                <SpCard
+                                    image={item.image}
+                                    title={item.title}
+                                    description={item.description}
+                                />
+                            </Grid>
+                        ))}
+                    </Grid>
+                </Category>
+                <Category categoryTitle="Recommended for today">
+                    <Grid container spacing={2}>
+                        {DummyMusicData.map(item => (
+                            <Grid item md={2.4} key={item.id}>
+                                <SpCard
+                                    image={item.image}
+                                    title={item.title}
+                                    description={item.description}
+                                />
+                            </Grid>
+                        ))}
+                    </Grid>
+                </Category>
+            </Stack>
         </HomeContainer>
     );
 }
