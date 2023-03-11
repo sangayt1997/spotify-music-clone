@@ -97,7 +97,7 @@ const UiDrawerList = () => {
                     </ListItem>
                 ))}
             </List>
-            <Divider sx={{borderColor: '#FFFFFF99'}}/>
+            <Divider sx={{borderColor: 'rgba(255,255,255,0.20)'}}/>
             <List>
                 {DrawerLists.map((item, index) => (
                     <ListItem key={index} disablePadding>
