@@ -11,6 +11,7 @@ interface SpCardProps {
     description?: string
 
 }
+
 const SpCard = (props: SpCardProps) => {
     const [isPlaying, setIsPlaying] = useState(false);
 
@@ -22,10 +23,10 @@ const SpCard = (props: SpCardProps) => {
         setIsPlaying(false);
     };
 
-    return(
+    return (
         <Card>
             <Box className="image-wrapper">
-                <img src={props.image} alt="music album"/>
+                <img src={props.image} alt="music album" loading="lazy"/>
                 <Box className="show-fab" position="absolute" bottom={12} right={12}>
                     <Fab
                         color="primary"
