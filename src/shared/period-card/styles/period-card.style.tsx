@@ -18,7 +18,7 @@ export const PeriodCard = styled.div`
   img {
     height: 80px;
     width: 80px;
-    object-fit: cover;
+    object-fit: fill;
     border-radius: 4px 0 0 4px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
   }

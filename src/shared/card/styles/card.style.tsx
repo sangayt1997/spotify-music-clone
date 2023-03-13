@@ -19,9 +19,9 @@ export const Card = styled.div`
     position: relative;
 
     img {
-      height: 150px;
-      width: 100%;
-      object-fit: cover;
+      height: 190px;
+      width: 190px;
+      object-fit: fill;
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     }
