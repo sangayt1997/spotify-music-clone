@@ -3,13 +3,14 @@ import styled from "styled-components";
 export const AlbumCard = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   min-width: 200px;
   background-color: #181818;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   overflow: hidden;
   cursor: pointer;
-  padding: 12px;
+  padding: 16px;
 
   .show-fab {
     display: none;
@@ -28,8 +29,7 @@ export const AlbumCard = styled.div`
   }
 
   &:hover {
-    opacity: 0.7;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: #282828;
 
     .show-fab {
       display: block;
