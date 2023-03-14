@@ -13,9 +13,10 @@ const TopSongGlobal = lazy(() => import('../pages/top-songs-global/top-song-glob
 
 const Router = () => {
     return (
-        <Suspense fallback={<SpProgressLoader />}>
+        <Suspense fallback={<SpProgressLoader/>}>
             <Routes>
                 <Route element={<Dashboard/>}>
+                    <Route path='/' element={<Home/>}/>
                     <Route path="/" element={<Home/>}/>
                     <Route path="/search" element={<Search/>}/>
                     <Route path="/your-library" element={<YourLibrary/>}/>
