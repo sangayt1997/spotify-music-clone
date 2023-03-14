@@ -7,42 +7,35 @@ import Category from "../../components/category/category";
 import PeriodCategories from "../../components/period-categories/period-categories";
 import SpPeriodCard from "../../shared/period-card/period-card";
 
-import musicAlbum from "../../assets/images/music_album_banner.webp";
-import vibeMusic from "../../assets/images/vibe_music.webp";
-import listeningVibeMusic from "../../assets/images/listening_vibe_music.webp";
-import joyfulMelody from "../../assets/images/joyful_melody.webp";
-import guyMusic from "../../assets/images/guy_music.webp";
-import redGirl from "../../assets/images/red_girl.webp";
-
 const Home = () => {
     const DummyMusicData = [
         {
             id: 'm1',
-            image: musicAlbum,
+            image: 'https://res.cloudinary.com/dsim60jne/image/upload/v1678805844/spotify-clone/vibe_music_gh57cy.webp',
             title: 'Daily Mix 1',
             description: 'The Chainsmokers, Calvin Harris, Flo Rida and more'
         },
         {
             id: 'm2',
-            image: vibeMusic,
+            image: 'https://res.cloudinary.com/dsim60jne/image/upload/v1678805942/spotify-clone/red_girl_zlyngf.webp',
             title: 'Daily Mix 2',
             description: 'Sam Smith, Adele, Shawn Mendes and more'
         },
         {
             id: 'm3',
-            image: listeningVibeMusic,
+            image: 'https://res.cloudinary.com/dsim60jne/image/upload/v1678806041/spotify-clone/music_album_banner_dypuhr.webp',
             title: 'Daily Mix 3',
             description: 'Eminem, Post Malone, The Kid LAROI and more'
         },
         {
             id: 'm4',
-            image: joyfulMelody,
+            image: 'https://res.cloudinary.com/dsim60jne/image/upload/v1678806112/spotify-clone/listening_vibe_music_l6gtvq.webp',
             title: 'Daily Mix 4',
             description: 'Ozuna, J Balvin, Myke Towers and more'
         },
         {
             id: 'm5',
-            image: redGirl,
+            image: 'https://res.cloudinary.com/dsim60jne/image/upload/v1678806221/spotify-clone/joyful_melody_l0ckqd.webp',
             title: 'Daily Mix 5',
             description: 'Mino, J Balvino, Myke Clock Tower, Ozuna, J Balvin, Myke Towers and more'
         },
@@ -51,27 +44,27 @@ const Home = () => {
     const DummyPeriodMusic = [
         {
             id: 'p1',
-            image: guyMusic,
+            image: 'https://res.cloudinary.com/dsim60jne/image/upload/v1678806398/spotify-clone/guy_music_zklwga.webp',
             title: 'Daily Mix 1'
         },
         {
             id: 'p2',
-            image: redGirl,
+            image: 'https://res.cloudinary.com/dsim60jne/image/upload/v1678805942/spotify-clone/red_girl_zlyngf.webp',
             title: 'Daily Mix 2'
         },
         {
             id: 'p3',
-            image: musicAlbum,
+            image: 'https://res.cloudinary.com/dsim60jne/image/upload/v1678806041/spotify-clone/music_album_banner_dypuhr.webp',
             title: 'Daily Mix 3'
         },
         {
             id: 'p4',
-            image: joyfulMelody,
+            image: 'https://res.cloudinary.com/dsim60jne/image/upload/v1678806221/spotify-clone/joyful_melody_l0ckqd.webp',
             title: 'Daily Mix 4'
         },
         {
             id: 'p5',
-            image: vibeMusic,
+            image: 'https://res.cloudinary.com/dsim60jne/image/upload/v1678805844/spotify-clone/vibe_music_gh57cy.webp',
             title: 'Daily Mix 5'
         },
     ];
