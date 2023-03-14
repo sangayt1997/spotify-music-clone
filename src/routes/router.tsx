@@ -1,8 +1,8 @@
 import React, { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import SpProgressLoader from "../shared/progress-loader/progress-loader";
+import Dashboard from "../pages/dashboard/dashboard";
 
-const Dashboard = lazy(() => import('../pages/dashboard/dashboard'));
 const Home = lazy(() => import('../pages/home/home'));
 const Search = lazy(() => import('../pages/search/search'));
 const YourLibrary = lazy(() => import('../pages/your-library/your-library'));
