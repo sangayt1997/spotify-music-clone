@@ -7,12 +7,12 @@ import Category from "../../components/category/category";
 import PeriodCategories from "../../components/period-categories/period-categories";
 import SpPeriodCard from "../../shared/period-card/period-card";
 
-import musicAlbum from "../../asset/images/music_album_banner.webp";
-import vibeMusic from "../../asset/images/vibe_music.webp";
-import listeningVibeMusic from "../../asset/images/listening_vibe_music.webp";
-import joyfulMelody from "../../asset/images/joyful_melody.webp";
-import guyMusic from "../../asset/images/guy_music.webp";
-import redGirl from "../../asset/images/red_girl.webp";
+import musicAlbum from "../../assets/images/music_album_banner.webp";
+import vibeMusic from "../../assets/images/vibe_music.webp";
+import listeningVibeMusic from "../../assets/images/listening_vibe_music.webp";
+import joyfulMelody from "../../assets/images/joyful_melody.webp";
+import guyMusic from "../../assets/images/guy_music.webp";
+import redGirl from "../../assets/images/red_girl.webp";
 
 const Home = () => {
     const DummyMusicData = [
