@@ -1,10 +1,10 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import Box from "@mui/material/Box";
 import { Link } from "react-router-dom";
 import { CategoryContainer } from "./styles/category.style";
 
 interface CategoryProps {
-    children: ReactNode;
+    children: React.ReactNode;
     categoryTitle: string;
 }
 
@@ -12,8 +12,8 @@ const Category = (props: CategoryProps) => {
     return (
         <CategoryContainer>
             <Box display="flex" justifyContent="space-between" py="12px">
-                <Link to="/" className="category-title">{props.categoryTitle}</Link>
-                <Link to="/" className="category-description">Show all</Link>
+                <Link to="/category" className="category-title">{props.categoryTitle}</Link>
+                <Link to="/show-more" className="category-description">Show all</Link>
             </Box>
             {props.children}
         </CategoryContainer>
