@@ -2,14 +2,14 @@ import React, { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import SpProgressLoader from "../shared/progress-loader/progress-loader";
 import Dashboard from "../pages/dashboard/dashboard";
+import Search from "../pages/search/search";
+import YourLibrary from "../pages/your-library/your-library";
+import CreatePlaylist from "../pages/create-playlist/create-playlist";
+import LikedSongs from "../pages/liked-songs/liked-songs";
+import MyPlaylist from "../pages/my-playlist/my-playlist";
+import TopSongGlobal from "../pages/top-songs-global/top-song-global";
 
 const Home = lazy(() => import('../pages/home/home'));
-const Search = lazy(() => import('../pages/search/search'));
-const YourLibrary = lazy(() => import('../pages/your-library/your-library'));
-const CreatePlaylist = lazy(() => import('../pages/create-playlist/create-playlist'));
-const LikedSongs = lazy(() => import('../pages/liked-songs/liked-songs'));
-const MyPlaylist = lazy(() => import('../pages/my-playlist/my-playlist'));
-const TopSongGlobal = lazy(() => import('../pages/top-songs-global/top-song-global'));
 
 const Router = () => {
     return (
