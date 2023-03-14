@@ -1,5 +1,6 @@
 import React, { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
+import SpProgressLoader from "../shared/progress-loader/progress-loader";
 
 const Dashboard = lazy(() => import('../pages/dashboard/dashboard'));
 const Home = lazy(() => import('../pages/home/home'));
@@ -12,7 +13,7 @@ const TopSongGlobal = lazy(() => import('../pages/top-songs-global/top-song-glob
 
 const Router = () => {
     return (
-        <Suspense fallback={<p>Loading...</p>}>
+        <Suspense fallback={<SpProgressLoader />}>
             <Routes>
                 <Route element={<Dashboard/>}>
                     <Route path="/" element={<Home/>}/>
