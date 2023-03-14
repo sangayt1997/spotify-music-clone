@@ -4,13 +4,13 @@ import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import Fab from "@mui/material/Fab";
+import Button from "@mui/material/Button";
 import { Outlet, useNavigate } from "react-router-dom";
-import { Fab } from "@mui/material";
 import { DashBoardContainer } from "./styles/dashboard.style";
 import Footer from "../../components/footer/footer";
 
@@ -19,7 +19,6 @@ const drawerWidth = 240;
 const Dashboard = () => {
     const [mobileOpen, setMobileOpen] = useState(false);
     const navigate = useNavigate();
-
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };
@@ -67,9 +66,7 @@ const Dashboard = () => {
                             </Grid>
                         </Grid>
                         <Grid item>
-                            <Typography variant="h6" noWrap component="div">
-                                Account UI here
-                            </Typography>
+                            <Button variant="outlined">Login</Button>
                         </Grid>
                     </Grid>
                 </Toolbar>

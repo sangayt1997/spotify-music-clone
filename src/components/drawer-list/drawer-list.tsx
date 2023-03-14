@@ -10,10 +10,10 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import LibraryMusicIcon from '@mui/icons-material/LibraryMusic';
 import ListItemText from "@mui/material/ListItemText";
 import Divider from "@mui/material/Divider";
-import spotifyTextLogo from "../../asset/logo/spotify_text_logo.png";
 import Box from "@mui/material/Box";
 import { Link } from "react-router-dom";
 import DrawerList from "./style/drawer-list.style";
+import spotifyTextLogo from "../../asset/logo/spotify_white_logo.png";
 
 const UiDrawerList = () => {
     const PrimaryDrawerLists = [
@@ -60,7 +60,7 @@ const UiDrawerList = () => {
 
     return (
         <DrawerList>
-            <Box margin={'12px 8px'} alignItems="center" display="flex">
+            <Box margin={'20px 16px'} alignItems="center" display="flex">
                 <Link to="/">
                     <img
                         src={spotifyTextLogo}
