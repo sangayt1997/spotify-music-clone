@@ -1,5 +1,5 @@
 import React from "react";
-import SpCard from "../../shared/card/card";
+import SpAlbumCard from "../../shared/album-card/album-card";
 import Grid from "@mui/material/Grid";
 import { HomeContainer } from "./styles/home.style";
 import Category from "../../components/category/category";
@@ -95,7 +95,7 @@ const Home = () => {
                     <Grid container spacing={2}>
                         {DummyMusicData.map(item => (
                             <Grid item md={2.4} key={item.id}>
-                                <SpCard
+                                <SpAlbumCard
                                     image={item.image}
                                     title={item.title}
                                     description={item.description}
@@ -108,7 +108,7 @@ const Home = () => {
                     <Grid container spacing={2}>
                         {DummyMusicData.map(item => (
                             <Grid item md={2.4} key={item.id}>
-                                <SpCard
+                                <SpAlbumCard
                                     image={item.image}
                                     title={item.title}
                                     description={item.description}
@@ -121,7 +121,7 @@ const Home = () => {
                     <Grid container spacing={2}>
                         {DummyMusicData.map(item => (
                             <Grid item md={2.4} key={item.id}>
-                                <SpCard
+                                <SpAlbumCard
                                     image={item.image}
                                     title={item.title}
                                     description={item.description}
@@ -134,7 +134,7 @@ const Home = () => {
                     <Grid container spacing={2}>
                         {DummyMusicData.map(item => (
                             <Grid item md={2.4} key={item.id}>
-                                <SpCard
+                                <SpAlbumCard
                                     image={item.image}
                                     title={item.title}
                                     description={item.description}
@@ -147,7 +147,7 @@ const Home = () => {
                     <Grid container spacing={2}>
                         {DummyMusicData.map(item => (
                             <Grid item md={2.4} key={item.id}>
-                                <SpCard
+                                <SpAlbumCard
                                     image={item.image}
                                     title={item.title}
                                     description={item.description}
@@ -160,7 +160,7 @@ const Home = () => {
                     <Grid container spacing={2}>
                         {DummyMusicData.map(item => (
                             <Grid item md={2.4} key={item.id}>
-                                <SpCard
+                                <SpAlbumCard
                                     image={item.image}
                                     title={item.title}
                                     description={item.description}

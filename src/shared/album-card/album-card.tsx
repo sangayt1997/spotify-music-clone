@@ -3,16 +3,16 @@ import Box from "@mui/material/Box";
 import { Fab } from "@mui/material";
 import PauseIcon from "@mui/icons-material/Pause";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
-import { Card, CardContent } from "./styles/card.style";
+import { AlbumCard, AlbumCardContent } from "./styles/album-card.style";
 
-interface SpCardProps {
+interface SpAlbumCardProps {
     image?: string | undefined,
     title?: string,
     description?: string
 
 }
 
-const SpCard = (props: SpCardProps) => {
+const SpAlbumCard = (props: SpAlbumCardProps) => {
     const [isPlaying, setIsPlaying] = useState(false);
 
     const playBtnHandler = () => {
@@ -24,7 +24,7 @@ const SpCard = (props: SpCardProps) => {
     };
 
     return (
-        <Card>
+        <AlbumCard>
             <Box className="image-wrapper">
                 <img src={props.image} alt="music album" loading="lazy"/>
                 <Box className="show-fab" position="absolute" bottom={12} right={12}>
@@ -53,12 +53,12 @@ const SpCard = (props: SpCardProps) => {
                     </Fab>
                 </Box>
             </Box>
-            <CardContent>
+            <AlbumCardContent>
                 <h2>{props.title}</h2>
                 <p>{props.description}</p>
-            </CardContent>
-        </Card>
+            </AlbumCardContent>
+        </AlbumCard>
     )
 }
 
-export default SpCard;
+export default SpAlbumCard;

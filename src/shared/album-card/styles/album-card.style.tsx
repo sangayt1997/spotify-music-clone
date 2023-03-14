@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Card = styled.div`
+export const AlbumCard = styled.div`
   display: flex;
   flex-direction: column;
   min-width: 200px;
@@ -37,7 +37,7 @@ export const Card = styled.div`
   }
 `;
 
-export const CardContent = styled.div`
+export const AlbumCardContent = styled.div`
   display: flex;
   flex-direction: column;
   padding: 12px 0;

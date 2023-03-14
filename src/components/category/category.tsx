@@ -5,7 +5,7 @@ import { CategoryContainer } from "./styles/category.style";
 
 interface CategoryProps {
     children: ReactNode;
-    categoryTitle: String;
+    categoryTitle: string;
 }
 
 const Category = (props: CategoryProps) => {
