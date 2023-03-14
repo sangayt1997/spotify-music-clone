@@ -81,7 +81,12 @@ const Dashboard = () => {
                 sx={{p: ['22px 24px'], minHeight: '100vh', width: {sm: `calc(100% - ${drawerWidth}px)`}}}
             >
                 <Toolbar/>
-                <Box display="flex" minHeight="92vh" flexDirection="column" justifyContent="space-between">
+                <Box
+                    display="flex"
+                    minHeight="92vh"
+                    flexDirection="column"
+                    justifyContent="space-between"
+                >
                     <Outlet/>
                     <Footer/>
                 </Box>

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import Box from "@mui/material/Box";
-import { Fab } from "@mui/material";
+import Fab from "@mui/material/Fab";
 import PauseIcon from "@mui/icons-material/Pause";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import { PeriodCard, PeriodCardContent } from "./styles/period-card.style";
 
 interface SpPeriodCardProps {
-    image?: string | undefined,
+    image?: string,
     title?: string,
 }
 

@@ -1,9 +1,8 @@
-import React, { ReactNode, useEffect, useState } from "react";
-import Box from "@mui/material/Box";
+import React, { useEffect, useState } from "react";
 import { PeriodCategoryContainer } from "./styles/category.style";
 
 interface PeriodCategoryProps {
-    children: ReactNode;
+    children: React.ReactNode;
 }
 
 const PeriodCategories = (props: PeriodCategoryProps) => {
@@ -15,7 +14,6 @@ const PeriodCategories = (props: PeriodCategoryProps) => {
         }, 1000);
 
         return () => clearInterval(interval);
-
     }, []);
 
     const hour = time.getHours();
@@ -30,9 +28,7 @@ const PeriodCategories = (props: PeriodCategoryProps) => {
 
     return (
         <PeriodCategoryContainer>
-            <Box display="flex" justifyContent="space-between" py="12px">
-                <h2 className="period-title">{greeting}</h2>
-            </Box>
+            <h2 className="period-title">{greeting}</h2>
             {props.children}
         </PeriodCategoryContainer>
     );

@@ -13,7 +13,7 @@ import Divider from "@mui/material/Divider";
 import Box from "@mui/material/Box";
 import { Link } from "react-router-dom";
 import DrawerList from "./style/drawer-list.style";
-import spotifyTextLogo from "../../asset/logo/spotify_white_logo.png";
+import spotifyTextLogo from "../../assets/logo/spotify_white_logo.png";
 
 const UiDrawerList = () => {
     const PrimaryDrawerLists = [
