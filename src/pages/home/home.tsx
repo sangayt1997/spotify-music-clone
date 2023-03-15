@@ -11,31 +11,31 @@ const Home = () => {
     const DummyMusicData = [
         {
             id: 'm1',
-            image: 'https://res.cloudinary.com/dsim60jne/image/upload/v1678805844/spotify-clone/vibe_music_gh57cy.webp',
+            image: 'https://res.cloudinary.com/dsim60jne/image/upload/v1678876466/spotify-clone/listening_vibe_music_bvnx0x.webp',
             title: 'Daily Mix 1',
             description: 'The Chainsmokers, Calvin Harris, Flo Rida and more'
         },
         {
             id: 'm2',
-            image: 'https://res.cloudinary.com/dsim60jne/image/upload/v1678805942/spotify-clone/red_girl_zlyngf.webp',
+            image: 'https://res.cloudinary.com/dsim60jne/image/upload/v1678876340/spotify-clone/red_girl_fr9wja.webp',
             title: 'Daily Mix 2',
             description: 'Sam Smith, Adele, Shawn Mendes and more'
         },
         {
             id: 'm3',
-            image: 'https://res.cloudinary.com/dsim60jne/image/upload/v1678806041/spotify-clone/music_album_banner_dypuhr.webp',
+            image: 'https://res.cloudinary.com/dsim60jne/image/upload/v1678876416/spotify-clone/music_album_banner_dzwntd.webp',
             title: 'Daily Mix 3',
             description: 'Eminem, Post Malone, The Kid LAROI and more'
         },
         {
             id: 'm4',
-            image: 'https://res.cloudinary.com/dsim60jne/image/upload/v1678806112/spotify-clone/listening_vibe_music_l6gtvq.webp',
+            image: 'https://res.cloudinary.com/dsim60jne/image/upload/v1678876251/spotify-clone/vibe_music_ndw5g0.webp',
             title: 'Daily Mix 4',
             description: 'Ozuna, J Balvin, Myke Towers and more'
         },
         {
             id: 'm5',
-            image: 'https://res.cloudinary.com/dsim60jne/image/upload/v1678806221/spotify-clone/joyful_melody_l0ckqd.webp',
+            image: 'https://res.cloudinary.com/dsim60jne/image/upload/v1678876600/spotify-clone/joyful_melody_hojfee.webp',
             title: 'Daily Mix 5',
             description: 'Mino, J Balvino, Myke Clock Tower, Ozuna, J Balvin, Myke Towers and more'
         },
@@ -44,27 +44,27 @@ const Home = () => {
     const DummyPeriodMusic = [
         {
             id: 'p1',
-            image: 'https://res.cloudinary.com/dsim60jne/image/upload/v1678806398/spotify-clone/guy_music_zklwga.webp',
+            image: 'https://res.cloudinary.com/dsim60jne/image/upload/v1678876120/spotify-clone/guy_music_uqlawj.webp',
             title: 'Daily Mix 1'
         },
         {
             id: 'p2',
-            image: 'https://res.cloudinary.com/dsim60jne/image/upload/v1678805942/spotify-clone/red_girl_zlyngf.webp',
+            image: 'https://res.cloudinary.com/dsim60jne/image/upload/v1678876340/spotify-clone/red_girl_fr9wja.webp',
             title: 'Daily Mix 2'
         },
         {
             id: 'p3',
-            image: 'https://res.cloudinary.com/dsim60jne/image/upload/v1678806041/spotify-clone/music_album_banner_dypuhr.webp',
+            image: 'https://res.cloudinary.com/dsim60jne/image/upload/v1678876416/spotify-clone/music_album_banner_dzwntd.webp',
             title: 'Daily Mix 3'
         },
         {
             id: 'p4',
-            image: 'https://res.cloudinary.com/dsim60jne/image/upload/v1678806221/spotify-clone/joyful_melody_l0ckqd.webp',
+            image: 'https://res.cloudinary.com/dsim60jne/image/upload/v1678876600/spotify-clone/joyful_melody_hojfee.webp',
             title: 'Daily Mix 4'
         },
         {
             id: 'p5',
-            image: 'https://res.cloudinary.com/dsim60jne/image/upload/v1678805844/spotify-clone/vibe_music_gh57cy.webp',
+            image: 'https://res.cloudinary.com/dsim60jne/image/upload/v1678876251/spotify-clone/vibe_music_ndw5g0.webp',
             title: 'Daily Mix 5'
         },
     ];
