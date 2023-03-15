@@ -24,7 +24,7 @@ const SpPeriodCard = (props: SpPeriodCardProps) => {
     return (
         <PeriodCard>
             <PeriodCardContent>
-                <img src={props.image} alt="music album"/>
+                <img src={props.image} alt="music album" loading="lazy"/>
                 <h2>{props.title}</h2>
             </PeriodCardContent>
             <Box className="show-fab" position="absolute" bottom={12} right={12}>
