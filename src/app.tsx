@@ -5,10 +5,10 @@ import Router from "./routes/router";
 
 function App() {
     return (
-        <Box sx={{minHeight: '100vh', backgroundColor: '#212121'}}>
-           <BrowserRouter>
-               <Router />
-           </BrowserRouter>
+        <Box sx={{backgroundColor: '#212121'}}>
+            <BrowserRouter>
+                <Router/>
+            </BrowserRouter>
         </Box>
     );
 }
