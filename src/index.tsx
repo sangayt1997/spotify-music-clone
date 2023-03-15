@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './style.scss';
 import App from './app';
 import reportWebVitals from './reportWebVitals';
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import theme from "./theme/theme";
+import './style.scss';
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
