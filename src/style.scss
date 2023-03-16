@@ -1,5 +1,6 @@
-@import "../src/styles/overwrite";
-@import "../src/styles/variable";
+@import "../src/stylesheet/overwrite";
+@import "../src/stylesheet/variable";
+@import "../src/stylesheet/utilities";
 
 * {
     margin: 0;
