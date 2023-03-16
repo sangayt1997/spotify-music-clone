@@ -148,12 +148,12 @@ const AlbumsTable = () => {
                                     <img width="40" height="40" src={item.albumImage} alt="album"/>
                                     <Stack>
                                         <Link to="/:id" className="fs-16">{item.title}</Link>
-                                        <Link to="/:id" className="artist-title color--gray">{item.artist}</Link>
+                                        <Link to="/:id" className="artist-title">{item.artist}</Link>
                                     </Stack>
                                 </Stack>
                             </TableCell>
                             <TableCell>
-                                <Link to="/:id" className="color--gray">
+                                <Link to="/:id" className="album-title">
                                     {item.album}
                                 </Link>
                             </TableCell>
