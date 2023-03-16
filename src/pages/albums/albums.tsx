@@ -1,11 +1,12 @@
 import React from "react";
 import Box from "@mui/material/Box";
+import AlbumsTable from "../../components/albums-table/albums-table";
 
 const Albums = () => {
 
     return (
         <Box sx={{display: 'flex'}}>
-            <p>Albums Page</p>
+            <AlbumsTable />
         </Box>
     );
 }
