@@ -4,6 +4,7 @@ import { Fab } from "@mui/material";
 import PauseIcon from "@mui/icons-material/Pause";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import { AlbumCard, AlbumCardContent } from "./styles/album-card.style";
+import { Link } from "react-router-dom";
 
 interface SpAlbumCardProps {
     image?: string | undefined,
@@ -24,40 +25,42 @@ const SpAlbumCard = (props: SpAlbumCardProps) => {
     };
 
     return (
-        <AlbumCard>
-            <Box className="image-wrapper">
-                <img src={props.image} alt="music album" loading="lazy"/>
-                <Box className="show-fab" position="absolute" bottom={12} right={12}>
-                    <Fab
-                        color="primary"
-                        size="medium"
-                        onClick={isPlaying ? pauseBtnHandler : playBtnHandler}
-                    >
-                        {isPlaying ? (
-                            <PauseIcon
-                                sx={{
-                                    height: 30,
-                                    width: 30,
-                                    color: "black"
-                                }}
-                            />
-                        ) : (
-                            <PlayArrowIcon
-                                sx={{
-                                    height: 30,
-                                    width: 30,
-                                    color: "black"
-                                }}
-                            />
-                        )}
-                    </Fab>
+        <Link className="text-decoration--none" to="/:id">
+            <AlbumCard>
+                <Box className="image-wrapper">
+                    <img src={props.image} alt="music album" loading="lazy"/>
+                    <Box className="show-fab" position="absolute" bottom={12} right={12}>
+                        <Fab
+                            color="primary"
+                            size="medium"
+                            onClick={isPlaying ? pauseBtnHandler : playBtnHandler}
+                        >
+                            {isPlaying ? (
+                                <PauseIcon
+                                    sx={{
+                                        height: 30,
+                                        width: 30,
+                                        color: "black"
+                                    }}
+                                />
+                            ) : (
+                                <PlayArrowIcon
+                                    sx={{
+                                        height: 30,
+                                        width: 30,
+                                        color: "black"
+                                    }}
+                                />
+                            )}
+                        </Fab>
+                    </Box>
                 </Box>
-            </Box>
-            <AlbumCardContent>
-                <h2>{props.title}</h2>
-                <p>{props.description}</p>
-            </AlbumCardContent>
-        </AlbumCard>
+                <AlbumCardContent>
+                    <h2>{props.title}</h2>
+                    <p>{props.description}</p>
+                </AlbumCardContent>
+            </AlbumCard>
+        </Link>
     )
 }
 

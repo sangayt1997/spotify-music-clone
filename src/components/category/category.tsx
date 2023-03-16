@@ -12,8 +12,8 @@ const Category = (props: CategoryProps) => {
     return (
         <CategoryContainer>
             <Box display="flex" justifyContent="space-between" py="12px">
-                <Link to="/search" className="category-title">{props.categoryTitle}</Link>
-                <Link to="/search" className="category-description">Show all</Link>
+                <Link to="/all-categories" className="category-title">{props.categoryTitle}</Link>
+                <Link to="/all-categories" className="category-description">Show all</Link>
             </Box>
             {props.children}
         </CategoryContainer>
