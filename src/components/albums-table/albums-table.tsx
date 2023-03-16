@@ -130,9 +130,9 @@ const AlbumsTable = () => {
                     <TableRow className="none-border">
                         <TableCell className="color--gray">#</TableCell>
                         <TableCell className="color--gray">Title</TableCell>
-                        <TableCell className="color--gray">Album</TableCell>
-                        <TableCell className="color--gray">Date Added</TableCell>
-                        <TableCell className="color--gray">
+                        <TableCell className="color--gray" align="center">Album</TableCell>
+                        <TableCell className="color--gray" align="center">Date Added</TableCell>
+                        <TableCell className="color--gray" align="center">
                             <ScheduleIcon fontSize="small"/>
                         </TableCell>
                     </TableRow>
@@ -152,14 +152,14 @@ const AlbumsTable = () => {
                                     </Stack>
                                 </Stack>
                             </TableCell>
-                            <TableCell>
+                            <TableCell align="center">
                                 <Link to="/:id" className="album-title">
                                     {item.album}
                                 </Link>
                             </TableCell>
-                            <TableCell className="color--gray">{item.dateAdded}</TableCell>
+                            <TableCell className="color--gray" align="center">{item.dateAdded}</TableCell>
                             <TableCell>
-                                <Stack direction="row" alignItems="center" spacing={7}>
+                                <Stack direction="row" alignItems="center" justifyContent="center" spacing={7}>
                                     <FavoriteBorderOutlinedIcon fontSize="small" className="color--gray"/>
                                     <Stack direction="row" alignItems="center" spacing={3}>
                                         <p className="color--gray">{item.duration}</p>
