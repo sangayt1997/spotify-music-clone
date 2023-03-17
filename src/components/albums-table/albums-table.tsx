@@ -12,6 +12,7 @@ import MoreHorizOutlinedIcon from '@mui/icons-material/MoreHorizOutlined';
 import { AlbumsTableContainer } from "./styles/ablums-table.style";
 import PauseIcon from "@mui/icons-material/Pause";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
+import Box from "@mui/material/Box";
 
 const AlbumsTable = () => {
     const [isPlaying, setIsPlaying] = useState(false);
@@ -137,7 +138,7 @@ const AlbumsTable = () => {
                 <TableHead>
                     <TableRow className="none-border">
                         <TableCell className="color--gray">
-                            <Stack direction="row" spacing={2}>
+                            <Stack direction="row" spacing={3}>
                                 <span>#</span>
                                 <span>Title</span>
                             </Stack>
@@ -162,28 +163,32 @@ const AlbumsTable = () => {
                         >
                             <TableCell>
                                 <Stack direction="row" spacing={2} alignItems="center">
-                                    {showContent !== index ? <p className="fs-16 color--gray">{item.id}</p> : (
-                                       <>
-                                           {isPlaying ?
-                                               <PlayArrowIcon
-                                                   onClick={togglePlayback}
-                                                   sx={{
-                                                       height: 20,
-                                                       width: 20,
-                                                       color: "white"
-                                                   }}
-                                               /> :
-                                               <PauseIcon
-                                                   onClick={togglePlayback}
-                                                   sx={{
-                                                       height: 20,
-                                                       width: 20,
-                                                       color: "white"
-                                                   }}
-                                               />
-                                           }
-                                       </>
-                                    )}
+                                    <Box display="flex" alignItems="center" justifyContent="center">
+                                        {showContent !== index ?
+                                            <p className="fs-16 color--gray">{item.id}</p> :
+                                            (
+                                                <>
+                                                    {isPlaying ?
+                                                        <PlayArrowIcon
+                                                            onClick={togglePlayback}
+                                                            sx={{
+                                                                height: 18,
+                                                                width: 18,
+                                                                color: "white"
+                                                            }}
+                                                        /> :
+                                                        <PauseIcon
+                                                            onClick={togglePlayback}
+                                                            sx={{
+                                                                height: 18,
+                                                                width: 18,
+                                                                color: "white"
+                                                            }}
+                                                        />
+                                                    }
+                                                </>
+                                            )}
+                                    </Box>
                                     <img width="40" height="40" src={item.albumImage} alt="album"/>
                                     <Stack>
                                         <Link to="/:id" className="fs-16">{item.title}</Link>
@@ -197,9 +202,10 @@ const AlbumsTable = () => {
                                 </Link>
                             </TableCell>
                             <TableCell className="color--gray" align="center">{item.dateAdded}</TableCell>
-                            <TableCell>
+                            <TableCell sx={{width: '200px'}}>
                                 <Stack direction="row" alignItems="center" justifyContent="center" spacing={7}>
-                                    {showContent === index &&  <FavoriteBorderOutlinedIcon fontSize="small" className="color--gray"/>}
+                                    {showContent === index &&
+                                        <FavoriteBorderOutlinedIcon fontSize="small" className="color--gray"/>}
                                     <Stack direction="row" alignItems="center" spacing={3}>
                                         <p className="color--gray">{item.duration}</p>
                                         {showContent === index && <MoreHorizOutlinedIcon fontSize="small"/>}
@@ -209,7 +215,7 @@ const AlbumsTable = () => {
                         </TableRow>
                     ))}
                 </TableBody
-                   >
+                >
             </Table>
         </AlbumsTableContainer>
     );
