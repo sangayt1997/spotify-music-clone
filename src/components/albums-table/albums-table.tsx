@@ -15,7 +15,7 @@ import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 
 const AlbumsTable = () => {
     const [isPlaying, setIsPlaying] = useState(false);
-    const [showContent, setShowContent] = useState(false);
+    const [showContent, setShowContent] = useState<number | null>(null);
     const togglePlayback = () => {
         setIsPlaying(prevState => !prevState);
     };
@@ -154,15 +154,15 @@ const AlbumsTable = () => {
                         <TableRow
                             key={item.id}
                             onMouseEnter={() => {
-                                setShowContent(true)
+                                setShowContent(index)
                             }}
                             onMouseLeave={() => {
-                                setShowContent(false)
+                                setShowContent(null)
                             }}
                         >
                             <TableCell>
                                 <Stack direction="row" spacing={2} alignItems="center">
-                                    {!showContent ? <p className="fs-16 color--gray">{item.id}</p> : (
+                                    {showContent !== index ? <p className="fs-16 color--gray">{item.id}</p> : (
                                        <>
                                            {isPlaying ?
                                                <PlayArrowIcon
@@ -199,10 +199,10 @@ const AlbumsTable = () => {
                             <TableCell className="color--gray" align="center">{item.dateAdded}</TableCell>
                             <TableCell>
                                 <Stack direction="row" alignItems="center" justifyContent="center" spacing={7}>
-                                    {showContent &&  <FavoriteBorderOutlinedIcon fontSize="small" className="color--gray"/>}
+                                    {showContent === index &&  <FavoriteBorderOutlinedIcon fontSize="small" className="color--gray"/>}
                                     <Stack direction="row" alignItems="center" spacing={3}>
                                         <p className="color--gray">{item.duration}</p>
-                                        {showContent && <MoreHorizOutlinedIcon fontSize="small"/>}
+                                        {showContent === index && <MoreHorizOutlinedIcon fontSize="small"/>}
                                     </Stack>
                                 </Stack>
                             </TableCell>
