@@ -1,18 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import { AlbumsTableContainer } from "./styles/ablums-table.style";
 import Stack from "@mui/material/Stack";
 import ScheduleIcon from '@mui/icons-material/Schedule';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import MoreHorizOutlinedIcon from '@mui/icons-material/MoreHorizOutlined';
+import { AlbumsTableContainer } from "./styles/ablums-table.style";
+import PauseIcon from "@mui/icons-material/Pause";
+import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 
 const AlbumsTable = () => {
-    const rows = [
+    const [isPlaying, setIsPlaying] = useState(false);
+    const [showContent, setShowContent] = useState(false);
+    const togglePlayback = () => {
+        setIsPlaying(prevState => !prevState);
+    };
+
+    const tableData = [
         {
             id: 1,
             albumImage: 'https://res.cloudinary.com/dsim60jne/image/upload/v1678884847/spotify-clone/listening_vibe_music_fjzqxl.webp',
@@ -128,23 +136,54 @@ const AlbumsTable = () => {
             <Table>
                 <TableHead>
                     <TableRow className="none-border">
-                        <TableCell className="color--gray">#</TableCell>
-                        <TableCell className="color--gray">Title</TableCell>
+                        <TableCell className="color--gray">
+                            <Stack direction="row" spacing={2}>
+                                <span>#</span>
+                                <span>Title</span>
+                            </Stack>
+                        </TableCell>
                         <TableCell className="color--gray" align="center">Album</TableCell>
-                        <TableCell className="color--gray" align="center">Date Added</TableCell>
+                        <TableCell className="color--gray" align="center">Date added</TableCell>
                         <TableCell className="color--gray" align="center">
                             <ScheduleIcon fontSize="small"/>
                         </TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {rows.map((item, index) => (
+                    {tableData.map((item, index) => (
                         <TableRow
                             key={item.id}
+                            onMouseEnter={() => {
+                                setShowContent(true)
+                            }}
+                            onMouseLeave={() => {
+                                setShowContent(false)
+                            }}
                         >
-                            <TableCell>{item.id}</TableCell>
                             <TableCell>
                                 <Stack direction="row" spacing={2} alignItems="center">
+                                    {!showContent ? <p className="fs-16 color--gray">{item.id}</p> : (
+                                       <>
+                                           {isPlaying ?
+                                               <PlayArrowIcon
+                                                   onClick={togglePlayback}
+                                                   sx={{
+                                                       height: 20,
+                                                       width: 20,
+                                                       color: "white"
+                                                   }}
+                                               /> :
+                                               <PauseIcon
+                                                   onClick={togglePlayback}
+                                                   sx={{
+                                                       height: 20,
+                                                       width: 20,
+                                                       color: "white"
+                                                   }}
+                                               />
+                                           }
+                                       </>
+                                    )}
                                     <img width="40" height="40" src={item.albumImage} alt="album"/>
                                     <Stack>
                                         <Link to="/:id" className="fs-16">{item.title}</Link>
@@ -160,16 +199,17 @@ const AlbumsTable = () => {
                             <TableCell className="color--gray" align="center">{item.dateAdded}</TableCell>
                             <TableCell>
                                 <Stack direction="row" alignItems="center" justifyContent="center" spacing={7}>
-                                    <FavoriteBorderOutlinedIcon fontSize="small" className="color--gray"/>
+                                    {showContent &&  <FavoriteBorderOutlinedIcon fontSize="small" className="color--gray"/>}
                                     <Stack direction="row" alignItems="center" spacing={3}>
                                         <p className="color--gray">{item.duration}</p>
-                                        <MoreHorizOutlinedIcon fontSize="small"/>
+                                        {showContent && <MoreHorizOutlinedIcon fontSize="small"/>}
                                     </Stack>
                                 </Stack>
                             </TableCell>
                         </TableRow>
                     ))}
-                </TableBody>
+                </TableBody
+                   >
             </Table>
         </AlbumsTableContainer>
     );
