@@ -1,3 +1,11 @@
+.d-block {
+  display: block;
+}
+
+.d-none {
+  display: none;
+}
+
 .text-decoration--none {
   text-decoration: none !important;
 }
@@ -8,4 +16,12 @@
 
 .min-height--100vh {
   min-height: 100vh;
+}
+
+.fs-16 {
+  font-size: 16px;
+}
+
+.color--gray {
+  color: #B3B3B3 !important;
 }
