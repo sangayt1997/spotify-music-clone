@@ -16,20 +16,28 @@ interface SpAlbumCardProps {
 const SpAlbumCard = (props: SpAlbumCardProps) => {
     const [isPlaying, setIsPlaying] = useState(false);
 
-    const playBtnHandler = () => {
+    const playBtnHandler = (event: { preventDefault: () => void; }) => {
+        event.preventDefault();
         setIsPlaying(true);
     }
 
-    const pauseBtnHandler = () => {
+    const pauseBtnHandler = (event: { preventDefault: () => void; }) => {
+        event.preventDefault();
         setIsPlaying(false);
     };
+
 
     return (
         <Link className="text-decoration--none" to="/:id">
             <AlbumCard>
                 <Box className="image-wrapper">
                     <img src={props.image} alt="music album" loading="lazy"/>
-                    <Box className="show-fab" position="absolute" bottom={12} right={12}>
+                    <Box
+                        className="show-fab"
+                        position="absolute"
+                        bottom={12}
+                        right={12}
+                    >
                         <Fab
                             color="primary"
                             size="medium"

@@ -14,11 +14,13 @@ interface SpPeriodCardProps {
 const SpPeriodCard = (props: SpPeriodCardProps) => {
     const [isPlaying, setIsPlaying] = useState(false);
 
-    const playBtnHandler = () => {
+    const playBtnHandler = (event: { preventDefault: () => void; }) => {
+        event.preventDefault();
         setIsPlaying(true);
     }
 
-    const pauseBtnHandler = () => {
+    const pauseBtnHandler = (event: { preventDefault: () => void; }) => {
+        event.preventDefault();
         setIsPlaying(false);
     };
 
@@ -29,7 +31,12 @@ const SpPeriodCard = (props: SpPeriodCardProps) => {
                     <img src={props.image} alt="music album" loading="lazy"/>
                     <h2>{props.title}</h2>
                 </PeriodCardContent>
-                <Box className="show-fab" position="absolute" bottom={12} right={12}>
+                <Box
+                    className="show-fab"
+                    position="absolute"
+                    bottom={12}
+                    right={12}
+                >
                     <Fab
                         color="primary"
                         size="medium"
