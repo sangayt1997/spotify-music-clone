@@ -7,7 +7,12 @@ const Albums = () => {
 
     return (
         <Stack sx={{display: 'flex'}} spacing={3}>
-            <AlbumHeader />
+            <AlbumHeader
+                albumCategories="Playlist"
+                albumTitle="This is Sia"
+                albumDescription="This is Sia. The essential tracks, all in one playlist."
+
+            />
             <AlbumsTable />
         </Stack>
     );
