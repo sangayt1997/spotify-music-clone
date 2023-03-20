@@ -1,13 +1,19 @@
 import React from "react";
-import Box from "@mui/material/Box";
 import AlbumsTable from "../../components/albums-table/albums-table";
+import AlbumHeader from "../../components/album-header/album-header";
+import Stack from "@mui/material/Stack";
 
 const Albums = () => {
 
     return (
-        <Box sx={{display: 'flex'}}>
+        <Stack sx={{display: 'flex'}}>
+            <AlbumHeader
+                albumCategories="Playlist"
+                albumTitle="This is Sia"
+                albumDescription="This is Sia. The essential tracks, all in one playlist."
+            />
             <AlbumsTable />
-        </Box>
+        </Stack>
     );
 }
 
