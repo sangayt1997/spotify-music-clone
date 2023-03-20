@@ -12,6 +12,10 @@ interface AlbumHeaderProps {
     albumCategories: string;
     albumTitle: string;
     albumDescription: string;
+    likes: string;
+    totalSong: string;
+
+    songsDuration: string;
 
 }
 
@@ -54,8 +58,8 @@ const AlbumHeader = (props: AlbumHeaderProps) => {
                                 height="30"
                             />
                             <Link to="/" className="fw-700">Spotify.</Link>
-                            <p>1,302,032 likes. 50 songs,</p>
-                            <p className="color--gray">about 2 hr 45 min</p>
+                            <p>{props.likes}. {props.totalSong},</p>
+                            <p className="color--gray">about {props.songsDuration}</p>
                         </Stack>
                     </Stack>
                 </Stack>
