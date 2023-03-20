@@ -8,6 +8,8 @@ import Fab from "@mui/material/Fab";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import MoreHorizOutlinedIcon from "@mui/icons-material/MoreHorizOutlined";
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import SpTooltip from "../../shared/tooltip/tooltip";
+import { AlbumsHeaderContainer } from "./styles/ablums-header.style";
 
 interface AlbumHeaderProps {
     albumCategories: string;
@@ -15,7 +17,6 @@ interface AlbumHeaderProps {
     albumDescription: string;
     likes: string;
     totalSong: string;
-
     songsDuration: string;
 
 }
@@ -35,11 +36,11 @@ const AlbumHeader = (props: AlbumHeaderProps) => {
     };
 
     const toggleFavHandler = () => {
-        setIsFav( prevState => !prevState);
+        setIsFav(prevState => !prevState);
     }
 
     return (
-        <Stack>
+        <AlbumsHeaderContainer>
             <Stack direction="row" spacing={4}>
                 <img
                     src="https://res.cloudinary.com/dsim60jne/image/upload/v1678884847/spotify-clone/listening_vibe_music_fjzqxl.webp"
@@ -94,15 +95,25 @@ const AlbumHeader = (props: AlbumHeaderProps) => {
                         />
                     )}
                 </Fab>
-                <div onClick={toggleFavHandler}>
-                    {!isFav ?
-                        <FavoriteBorderOutlinedIcon fontSize="large" className="color--gray"/> :
-                        <FavoriteIcon fontSize="large" color="primary"/>
-                    }
-                </div>
-                <MoreHorizOutlinedIcon fontSize="large" className="color--gray"/>
+                <SpTooltip title="Save to your library">
+                    <div onClick={toggleFavHandler}>
+                        {!isFav ?
+                            <FavoriteBorderOutlinedIcon
+                                fontSize="large"
+                                className="icon-hover"
+                            /> :
+                            <FavoriteIcon fontSize="large" color="primary"/>
+                        }
+                    </div>
+                </SpTooltip>
+                <SpTooltip title="More options">
+                    <MoreHorizOutlinedIcon
+                        fontSize="large"
+                        className="icon-hover"
+                    />
+                </SpTooltip>
             </Stack>
-        </Stack>
+        </AlbumsHeaderContainer>
     );
 }
 
