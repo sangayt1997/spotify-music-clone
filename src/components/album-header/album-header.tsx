@@ -7,6 +7,7 @@ import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import Fab from "@mui/material/Fab";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import MoreHorizOutlinedIcon from "@mui/icons-material/MoreHorizOutlined";
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 interface AlbumHeaderProps {
     albumCategories: string;
@@ -21,6 +22,7 @@ interface AlbumHeaderProps {
 
 const AlbumHeader = (props: AlbumHeaderProps) => {
     const [isPlaying, setIsPlaying] = useState(false);
+    const [isFav, setIsFav] = useState(false);
 
     const playBtnHandler = (event: { preventDefault: () => void; }) => {
         event.preventDefault();
@@ -31,6 +33,10 @@ const AlbumHeader = (props: AlbumHeaderProps) => {
         event.preventDefault();
         setIsPlaying(false);
     };
+
+    const toggleFavHandler = () => {
+        setIsFav( prevState => !prevState);
+    }
 
     return (
         <Stack>
@@ -88,7 +94,12 @@ const AlbumHeader = (props: AlbumHeaderProps) => {
                         />
                     )}
                 </Fab>
-                <FavoriteBorderOutlinedIcon fontSize="large" className="color--gray"/>
+                <div onClick={toggleFavHandler}>
+                    {!isFav ?
+                        <FavoriteBorderOutlinedIcon fontSize="large" className="color--gray"/> :
+                        <FavoriteIcon fontSize="large" color="primary"/>
+                    }
+                </div>
                 <MoreHorizOutlinedIcon fontSize="large" className="color--gray"/>
             </Stack>
         </Stack>
