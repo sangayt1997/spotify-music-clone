@@ -58,7 +58,7 @@ const AlbumHeader = (props: AlbumHeaderProps) => {
                                 height="30"
                             />
                             <Link to="/" className="fw-700">Spotify.</Link>
-                            <p>{props.likes}. {props.totalSong},</p>
+                            <p>{props.likes}. {props.totalSong},&nbsp;</p>
                             <p className="color--gray">about {props.songsDuration}</p>
                         </Stack>
                     </Stack>
