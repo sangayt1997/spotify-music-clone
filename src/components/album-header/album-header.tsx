@@ -7,16 +7,23 @@ import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import Fab from "@mui/material/Fab";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import MoreHorizOutlinedIcon from "@mui/icons-material/MoreHorizOutlined";
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import SpTooltip from "../../shared/tooltip/tooltip";
+import { AlbumsHeaderContainer } from "./styles/ablums-header.style";
 
 interface AlbumHeaderProps {
     albumCategories: string;
     albumTitle: string;
     albumDescription: string;
+    likes: string;
+    totalSong: string;
+    songsDuration: string;
 
 }
 
 const AlbumHeader = (props: AlbumHeaderProps) => {
     const [isPlaying, setIsPlaying] = useState(false);
+    const [isFav, setIsFav] = useState(false);
 
     const playBtnHandler = (event: { preventDefault: () => void; }) => {
         event.preventDefault();
@@ -28,14 +35,19 @@ const AlbumHeader = (props: AlbumHeaderProps) => {
         setIsPlaying(false);
     };
 
+    const toggleFavHandler = () => {
+        setIsFav(prevState => !prevState);
+    }
+
     return (
-        <Stack>
+        <AlbumsHeaderContainer>
             <Stack direction="row" spacing={4}>
                 <img
                     src="https://res.cloudinary.com/dsim60jne/image/upload/v1678884847/spotify-clone/listening_vibe_music_fjzqxl.webp"
                     alt="album header"
-                    width="200"
-                    height="200"
+                    width="240"
+                    height="240"
+                    className="album-image"
                 />
                 <Stack
                     display="flex"
@@ -43,7 +55,7 @@ const AlbumHeader = (props: AlbumHeaderProps) => {
                     alignSelf="flex-end"
                 >
                     <p className="fw-700 fs-14">{props.albumCategories}</p>
-                    <h1 className="fs-96">{props.albumTitle}</h1>
+                    <h1 className="fs-96 lh-small">{props.albumTitle}</h1>
                     <Stack className="fs-14">
                         <p>{props.albumDescription}</p>
                         <Stack direction="row" alignItems="center">
@@ -54,8 +66,8 @@ const AlbumHeader = (props: AlbumHeaderProps) => {
                                 height="30"
                             />
                             <Link to="/" className="fw-700">Spotify.</Link>
-                            <p>1,302,032 likes. 50 songs,</p>
-                            <p className="color--gray">about 2 hr 45 min</p>
+                            <p>{props.likes}. {props.totalSong},&nbsp;</p>
+                            <p className="color--gray">about {props.songsDuration}</p>
                         </Stack>
                     </Stack>
                 </Stack>
@@ -84,10 +96,25 @@ const AlbumHeader = (props: AlbumHeaderProps) => {
                         />
                     )}
                 </Fab>
-                <FavoriteBorderOutlinedIcon fontSize="large" className="color--gray"/>
-                <MoreHorizOutlinedIcon fontSize="large" className="color--gray"/>
+                <SpTooltip title="Save to your library">
+                    <div onClick={toggleFavHandler}>
+                        {!isFav ?
+                            <FavoriteBorderOutlinedIcon
+                                fontSize="large"
+                                className="icon-hover"
+                            /> :
+                            <FavoriteIcon fontSize="large" color="primary"/>
+                        }
+                    </div>
+                </SpTooltip>
+                <SpTooltip title="More options">
+                    <MoreHorizOutlinedIcon
+                        fontSize="large"
+                        className="icon-hover"
+                    />
+                </SpTooltip>
             </Stack>
-        </Stack>
+        </AlbumsHeaderContainer>
     );
 }
 

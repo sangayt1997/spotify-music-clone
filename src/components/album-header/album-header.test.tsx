@@ -4,7 +4,16 @@ import AlbumHeader from './album-header';
 
 // Dummy copied test from app.test.tsx
 test('renders learn react link', () => {
-    render(<AlbumHeader albumCategories="" albumDescription="" albumTitle="" />);
+    render(
+        <AlbumHeader
+            albumCategories=""
+            albumDescription=""
+            albumTitle=""
+            likes=""
+            songsDuration=""
+            totalSong=""
+        />
+    );
     const linkElement = screen.getByText(/learn react/i);
     expect(linkElement).toBeInTheDocument();
 });
