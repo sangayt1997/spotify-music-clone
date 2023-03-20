@@ -15,10 +15,10 @@ import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import Box from "@mui/material/Box";
 
 const AlbumsTable = () => {
-    const [isPlaying, setIsPlaying] = useState(false);
+    const [isPlaying, setIsPlaying] = useState<number | null>(null);
     const [showContent, setShowContent] = useState<number | null>(null);
-    const togglePlayBtn = () => {
-        setIsPlaying(prevState => !prevState);
+    const togglePlayBtn = (index: number) => {
+        setIsPlaying(prevIndex => prevIndex === index ? null : index);
     };
 
     const tableData = [
@@ -166,8 +166,8 @@ const AlbumsTable = () => {
                                     <Box display="flex" alignItems="center" justifyContent="center">
                                         {showContent === index ?
                                             (
-                                                <Box onClick={togglePlayBtn}>
-                                                    {isPlaying?
+                                                <Box onClick={() => togglePlayBtn(index)}>
+                                                    {isPlaying === index?
                                                         <PauseIcon
                                                             sx={{
                                                                 height: 18,
@@ -187,7 +187,6 @@ const AlbumsTable = () => {
                                             )
                                             : <p className="fs-16 color--gray">{item.id}</p>
                                         }
-
                                     </Box>
                                     <img width="40" height="40" src={item.albumImage} alt="album"/>
                                     <Stack>
