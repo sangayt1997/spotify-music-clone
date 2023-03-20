@@ -6,12 +6,11 @@ import Stack from "@mui/material/Stack";
 const Albums = () => {
 
     return (
-        <Stack sx={{display: 'flex'}} spacing={3}>
+        <Stack sx={{display: 'flex'}}>
             <AlbumHeader
                 albumCategories="Playlist"
                 albumTitle="This is Sia"
                 albumDescription="This is Sia. The essential tracks, all in one playlist."
-
             />
             <AlbumsTable />
         </Stack>

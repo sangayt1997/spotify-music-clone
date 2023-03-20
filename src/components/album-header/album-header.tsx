@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import Stack from "@mui/material/Stack";
 import spotifyBlackLogo from "../../assets/logo/spotify_black_logo.png";
 import { Link } from "react-router-dom";
+import PauseIcon from "@mui/icons-material/Pause";
+import PlayArrowIcon from "@mui/icons-material/PlayArrow";
+import Fab from "@mui/material/Fab";
+import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+import MoreHorizOutlinedIcon from "@mui/icons-material/MoreHorizOutlined";
 
 interface AlbumHeaderProps {
     albumCategories: string;
@@ -11,6 +16,18 @@ interface AlbumHeaderProps {
 }
 
 const AlbumHeader = (props: AlbumHeaderProps) => {
+    const [isPlaying, setIsPlaying] = useState(false);
+
+    const playBtnHandler = (event: { preventDefault: () => void; }) => {
+        event.preventDefault();
+        setIsPlaying(true);
+    }
+
+    const pauseBtnHandler = (event: { preventDefault: () => void; }) => {
+        event.preventDefault();
+        setIsPlaying(false);
+    };
+
     return (
         <Stack>
             <Stack direction="row" spacing={4}>
@@ -24,11 +41,10 @@ const AlbumHeader = (props: AlbumHeaderProps) => {
                     display="flex"
                     flexDirection="column"
                     alignSelf="flex-end"
-                    spacing={2}
                 >
-                    <p>{props.albumCategories}</p>
-                    <h1>{props.albumTitle}</h1>
-                    <Stack>
+                    <p className="fw-700 fs-14">{props.albumCategories}</p>
+                    <h1 className="fs-96">{props.albumTitle}</h1>
+                    <Stack className="fs-14">
                         <p>{props.albumDescription}</p>
                         <Stack direction="row" alignItems="center">
                             <img
@@ -37,14 +53,40 @@ const AlbumHeader = (props: AlbumHeaderProps) => {
                                 width="30"
                                 height="30"
                             />
-                            <Link to="/">Spotify.</Link>
+                            <Link to="/" className="fw-700">Spotify.</Link>
                             <p>1,302,032 likes. 50 songs,</p>
-                            <p>about 2 hr 45 min</p>
+                            <p className="color--gray">about 2 hr 45 min</p>
                         </Stack>
                     </Stack>
                 </Stack>
             </Stack>
-            <p>djasdnsad</p>
+            <Stack direction="row" spacing={4} paddingY="32px" alignItems="center">
+                <Fab
+                    color="primary"
+                    size="medium"
+                    onClick={isPlaying ? pauseBtnHandler : playBtnHandler}
+                >
+                    {isPlaying ? (
+                        <PauseIcon
+                            sx={{
+                                height: 30,
+                                width: 30,
+                                color: "black"
+                            }}
+                        />
+                    ) : (
+                        <PlayArrowIcon
+                            sx={{
+                                height: 30,
+                                width: 30,
+                                color: "black"
+                            }}
+                        />
+                    )}
+                </Fab>
+                <FavoriteBorderOutlinedIcon fontSize="large" className="color--gray"/>
+                <MoreHorizOutlinedIcon fontSize="large" className="color--gray"/>
+            </Stack>
         </Stack>
     );
 }
