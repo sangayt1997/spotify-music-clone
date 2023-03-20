@@ -45,8 +45,9 @@ const AlbumHeader = (props: AlbumHeaderProps) => {
                 <img
                     src="https://res.cloudinary.com/dsim60jne/image/upload/v1678884847/spotify-clone/listening_vibe_music_fjzqxl.webp"
                     alt="album header"
-                    width="200"
-                    height="200"
+                    width="240"
+                    height="240"
+                    className="album-image"
                 />
                 <Stack
                     display="flex"
@@ -54,7 +55,7 @@ const AlbumHeader = (props: AlbumHeaderProps) => {
                     alignSelf="flex-end"
                 >
                     <p className="fw-700 fs-14">{props.albumCategories}</p>
-                    <h1 className="fs-96">{props.albumTitle}</h1>
+                    <h1 className="fs-96 lh-small">{props.albumTitle}</h1>
                     <Stack className="fs-14">
                         <p>{props.albumDescription}</p>
                         <Stack direction="row" alignItems="center">
