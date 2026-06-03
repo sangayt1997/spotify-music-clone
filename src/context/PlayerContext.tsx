@@ -223,7 +223,7 @@ export const PlayerProvider: React.FC<PlayerProviderProps> = ({ children }) => {
     audioRef.current.play().catch(err => {
       console.warn('Audio play failed:', err);
     });
-  }, [handleNextTrack]);
+  }, []);
 
   const seek = useCallback((time: number) => {
     audioRef.current.currentTime = time;
