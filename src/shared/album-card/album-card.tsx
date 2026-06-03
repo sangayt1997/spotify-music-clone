@@ -1,31 +1,39 @@
-import React, { useState } from "react";
+import React from "react";
 import Box from "@mui/material/Box";
 import { Fab } from "@mui/material";
 import PauseIcon from "@mui/icons-material/Pause";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import { AlbumCard, AlbumCardContent } from "./styles/album-card.style";
 import { Link } from "react-router-dom";
+import { usePlayer } from "../../context/PlayerContext";
+import { Song } from "../../types/music";
 
 interface SpAlbumCardProps {
     image?: string | undefined,
     title?: string,
-    description?: string
-
+    description?: string,
+    songs?: Song[],
+    onClick?: () => void;
 }
 
 const SpAlbumCard = (props: SpAlbumCardProps) => {
-    const [isPlaying, setIsPlaying] = useState(false);
+    const { currentSong, isPlaying, playAlbum, togglePlay } = usePlayer();
 
-    const playBtnHandler = (event: { preventDefault: () => void; }) => {
-        event.preventDefault();
-        setIsPlaying(true);
-    }
+    // Check if any song from this card's playlist is currently playing
+    const isCardPlaying = props.songs?.some(song => song.id === currentSong?.id && isPlaying) ?? false;
 
-    const pauseBtnHandler = (event: { preventDefault: () => void; }) => {
+    const handlePlayClick = (event: { preventDefault: () => void; stopPropagation: () => void }) => {
         event.preventDefault();
-        setIsPlaying(false);
+        event.stopPropagation();
+
+        if (props.songs && props.songs.length > 0) {
+            if (isCardPlaying) {
+                togglePlay();
+            } else {
+                playAlbum(props.songs);
+            }
+        }
     };
-
 
     return (
         <Link className="text-decoration--none" to="/:id">
@@ -41,9 +49,9 @@ const SpAlbumCard = (props: SpAlbumCardProps) => {
                         <Fab
                             color="primary"
                             size="medium"
-                            onClick={isPlaying ? pauseBtnHandler : playBtnHandler}
+                            onClick={handlePlayClick}
                         >
-                            {isPlaying ? (
+                            {isCardPlaying ? (
                                 <PauseIcon
                                     sx={{
                                         height: 30,

@@ -1,27 +1,36 @@
-import React, { useState } from "react";
+import React from "react";
 import Box from "@mui/material/Box";
 import Fab from "@mui/material/Fab";
 import PauseIcon from "@mui/icons-material/Pause";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import { PeriodCard, PeriodCardContent } from "./styles/period-card.style";
 import { Link } from "react-router-dom";
+import { usePlayer } from "../../context/PlayerContext";
+import { Song } from "../../types/music";
 
 interface SpPeriodCardProps {
     image?: string,
     title?: string,
+    songs?: Song[],
 }
 
 const SpPeriodCard = (props: SpPeriodCardProps) => {
-    const [isPlaying, setIsPlaying] = useState(false);
+    const { currentSong, isPlaying, playAlbum, togglePlay } = usePlayer();
 
-    const playBtnHandler = (event: { preventDefault: () => void; }) => {
-        event.preventDefault();
-        setIsPlaying(true);
-    }
+    // Check if any song from this playlist is currently playing
+    const isCardPlaying = props.songs?.some(song => song.id === currentSong?.id && isPlaying) ?? false;
 
-    const pauseBtnHandler = (event: { preventDefault: () => void; }) => {
+    const handlePlayClick = (event: { preventDefault: () => void; stopPropagation: () => void }) => {
         event.preventDefault();
-        setIsPlaying(false);
+        event.stopPropagation();
+
+        if (props.songs && props.songs.length > 0) {
+            if (isCardPlaying) {
+                togglePlay();
+            } else {
+                playAlbum(props.songs);
+            }
+        }
     };
 
     return (
@@ -40,9 +49,9 @@ const SpPeriodCard = (props: SpPeriodCardProps) => {
                     <Fab
                         color="primary"
                         size="medium"
-                        onClick={isPlaying ? pauseBtnHandler : playBtnHandler}
+                        onClick={handlePlayClick}
                     >
-                        {isPlaying ? (
+                        {isCardPlaying ? (
                             <PauseIcon
                                 sx={{
                                     height: 30,
